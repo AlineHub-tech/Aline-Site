@@ -1,0 +1,4 @@
+.contact .container { max-width:780px; margin:0 auto; color:#e6f8ff }
+.contact-form { display:flex; flex-direction:column; gap:10px; margin-top:12px }
+.contact-form input, .contact-form textarea { padding:10px; border-radius:8px; border:2px solid rgba(255, 255, 255, 0.623); background:transparent; color:inherit }
+.contact-info { margin-top:14px; color:#bcd3e6 }

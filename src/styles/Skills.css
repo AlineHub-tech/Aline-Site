@@ -1,0 +1,4 @@
+.skills .container { max-width:1100px; margin:0 auto; color:#ddf6ff }
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:12px }
+.skill-card { background:rgba(0, 0, 0, 0.753); padding:14px; border-radius:10px }
+.skill-card ul { margin-top:8px; color:#bcd3e6 }

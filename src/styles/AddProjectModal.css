@@ -1,0 +1,9 @@
+.modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:80 }
+.modal-card { width:420px; max-width:94%; background:#071422; padding:18px; border-radius:10px; color:#e8f3ff; border:1px solid rgba(255,255,255,0.04) }
+.modal-card h3{ margin-bottom:10px }
+.modal-card label{ display:block; margin:8px 0; font-size:14px; color:#cfe9ff }
+.modal-card input, .modal-card textarea{ width:100%; padding:8px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit }
+.modal-actions{ display:flex; justify-content:flex-end; gap:8px; margin-top:12px }
+.btn { padding:8px 12px; border-radius:8px; border:none; cursor:pointer }
+.btn.primary{ background:#00aef0; color:#021127 }
+.btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:#cfe9ff }

@@ -1,0 +1,6 @@
+.section { padding:48px 18px; }
+.container { max-width:1100px; margin:0 auto; color:#dff2ff }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px }
+.about-card { background:rgba(0, 0, 0, 0.753); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.03) }
+.about-card ul { margin-top:8px; color:#bcd3e6; }
+@media(max-width:820px){ .about-grid{grid-template-columns:1fr} }
