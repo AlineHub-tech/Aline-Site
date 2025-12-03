@@ -1,0 +1,36 @@
+:root {
+  --bg1: #04121a;
+  --bg2: #06121a;
+  --muted: #9fbfda;
+  --accent: #00c2ff;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:#e6f8ff;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* subtle moving background */
+body::after{
+  content:"";
+  position:fixed; inset:-30% -30%;
+  background:radial-gradient(circle at 30% 20%, rgba(0,194,255,0.04), transparent 8%),
+             radial-gradient(circle at 80% 80%, rgba(80,200,150,0.02), transparent 12%);
+  z-index:-1; animation:move 20s linear infinite;
+}
+@keyframes move{0%{transform:translate(0,0)}50%{transform:translate(30px, -20px)}100%{transform:translate(0,0)}}
+
+/* utility helpers */
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+.section h2{font-size:22px;margin-bottom:8px}
+.muted{color:var(--muted)}
+.btn{padding:8px 12px;border-radius:8px;background:var(--accent);color:#021022;text-decoration:none;border:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+.btn.outline{background:transparent;border:1px dashed rgba(255,255,255,0.04); color:var(--muted)}
+
