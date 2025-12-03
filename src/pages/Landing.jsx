@@ -85,7 +85,7 @@ export default function Landing() {
             >
               LinkedIn
             <FaLinkedin/></a>
-            <Link className="btn outline" to="/projects">See Projects</Link>
+            <Link className="btn outline" to="/projectPage">See my Projects</Link>
           </div>
 
          
