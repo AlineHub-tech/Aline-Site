@@ -84,6 +84,7 @@
   color: #00eaff;
 }
 
+
 .animated-slogan span:nth-child(1) { display: inline; } */
 
 /* CTA Buttons */
@@ -183,4 +184,5 @@ margin-top:5%;
   20% { opacity:1; transform:translateY(0);}
   25% { opacity:0; transform:translateY(-100%);}
   100% { opacity:0; transform:translateY(-100%);}
+
 }
