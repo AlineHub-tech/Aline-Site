@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import profile from "../assets/profile.png";
 import "../styles/Landing.css";
 
@@ -95,5 +94,6 @@ export default function Landing() {
     </section>
   );
 }
+
 
 
