@@ -77,14 +77,14 @@ export default function Landing() {
               rel="noreferrer"
             >
               GitHub
-           <FaGithub/> </a>
+            </a>
             <a className="btn ghost"
               href="https://www.linkedin.com/in/umugwaneza-aline-655146325"
               target="_blank"
               rel="noreferrer"
             >
               LinkedIn
-            <FaLinkedin/></a>
+            </a>
             <Link className="btn outline" to="/projectPage">See my Projects</Link>
           </div>
 
@@ -95,4 +95,5 @@ export default function Landing() {
     </section>
   );
 }
+
 
