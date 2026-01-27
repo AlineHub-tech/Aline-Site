@@ -1,99 +1,66 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profile from "../assets/profile.png";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaArrowRight, FaCode, FaPaintBrush } from "react-icons/fa";
+import profile from "../assets/profile.PNG"; 
 import "../styles/Landing.css";
 
 const SLOGANS = [
-  "Frontend Developer",
-  "Backend Developer",
-  "UI Developer",
-  "Graphic Designer",
-  "Photography Enthusiast",
-  "Microsoft Office Pro",
-  "Problem Solver",
-  "Community Helper",
-  "Continuous Learner",
-  "Team Player"
+  "Crafting Digital Experiences", "Innovating with Code", "Turning Ideas into Reality", 
+  "Building Modern Web Solutions", "Design Meets Functionality", "Problem Solver at Heart", 
+  "Your Next Tech Partner", "Passionate about Web Dev", "Clean Code Advocate", "Frontend Expert"
 ];
+const WHATSAPP_NUMBER = "0796023452";
 
 export default function Landing() {
-  const [i, setI] = useState(0);
-
+  const [currentSloganIndex, setCurrentSloganIndex] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setI((s) => (s + 1) % SLOGANS.length), 2200);
-    return () => clearInterval(t);
-  }, []);
-
-  // ⭐ GENERATE MOVING STARS
-  useEffect(() => {
-    const stars = document.querySelector(".stars");
-    for (let i = 0; i < 80; i++) {
-      let star = document.createElement("div");
-      star.classList.add("star");
-
-      star.style.top = Math.random() * window.innerHeight + "px";
-      star.style.left = Math.random() * window.innerWidth + "px";
-      star.style.animationDuration = 3 + Math.random() * 6 + "s";
-
-      stars.appendChild(star);
-    }
+    const intervalId = setInterval(() => {
+      setCurrentSloganIndex(prevIndex => (prevIndex + 1) % SLOGANS.length);
+    }, 2500); 
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <section className="landing">
-
-      {/* ⭐ Background Stars Layer */}
-      <div className="stars"></div>
-
-      {/* ⭐ Top Glow Light */}
-      <div className="top-glow"></div>
-
-      <div className="landing-inner">
-        <div className="left">
-          <img src={profile} alt="Aline" className="hero-photo" />
-        </div>
-
-        <div className="right">
-          <h1>Hi I'm Umugwaneza Aline</h1>
-
-          <section className="slogan">
-            <h2 className="animated-slogan">
-              {SLOGANS.map((s, index) => (
-                <span key={index}>{s}</span>
-              ))}
-            </h2>
-            <p style={{ fontSize: "15px", fontWeight: "bold" }}>
-              Coding With Purpose, Design With Passion!
-              Creativity + Code = Power to build the future
-            </p>
-          </section>
-             <p style={{ fontSize: "15px", fontWeight: "bold" }}></p>
-              My Development Work
-            <div className="cta-row">
-            <a className="btn primary"
-              href="https://github.com/AlineHub-tech"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            <a className="btn ghost"
-              href="https://www.linkedin.com/in/umugwaneza-aline-655146325"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-            <Link className="btn outline" to="/projectPage">See my Projects</Link>
+    <section className="landing-nexventures full-page-layout">
+      <div className="blue-glow-bg"></div>
+      <div className="landing-inner-content">
+        <div className="left-side-nv">
+          <p className="subtitle-nv">Welcome to my Portfolio</p>
+          
+          {/* Buto ebyiri zikuru ziri mu mwanya w'izina n'description */}
+          <div className="main-slogan-buttons">
+              <button className="btn-nv primary-nv slogan-btn">
+                  <FaCode/> Coding With Purpose, Design With Passion! 
+              </button>
+              <button className="btn-nv ghost-nv slogan-btn">
+                  <FaPaintBrush/> Creativity + Code = Power to build the future
+              </button>
           </div>
 
-         
+          <section className="slogan-container-nv">
+            <h2 className="animated-slogan-text-nv">
+              {SLOGANS[currentSloganIndex]}
+            </h2>
+          </section>
+             
+          {/* Description nshya icumita ku ntego */}
+          <p className="tagline-nv strong-description">
+            I specialize in building elegant, efficient, and user-friendly solutions. Explore how creativity and code combine to power the future of your projects.
+          </p>
+          <div className="cta-row-nv social-buttons">
+            <Link className="btn-nv primary-nv" to="/projects">View My Portfolio <FaArrowRight /></Link>
+            <a className="btn-nv ghost-nv" href="https://github.com" target="_blank" rel="noreferrer">GitHub <FaGithub /></a>
+            <a className="btn-nv ghost-nv" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <FaLinkedin /></a>
+          </div>
+        </div>
+        
+        <div className="right-side-nv">
+          <img src={profile} alt="Aline Umugwaneza" className="hero-photo-circle-nv" />
         </div>
       </div>
-
+      <a href={`https://wa.me{WHATSAPP_NUMBER}`} className="whatsapp-float-nv" target="_blank" rel="noopener noreferrer" aria-label="Chat with Aline on WhatsApp">
+        <FaWhatsapp className="whatsapp-icon-nv" />
+      </a>
     </section>
   );
 }
-
-
-
