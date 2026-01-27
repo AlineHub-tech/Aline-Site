@@ -1,6 +1,147 @@
-.services .container { max-width:1100px; margin:0 auto; color:#dff2ff }
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px }
-.service-card { background:rgba(0, 0, 0, 0.753); padding:14px; border-radius:12px; text-align:left; min-height:120px }
-.service-icon { font-size:22px; color:#00c2ff; margin-bottom:10px }
-.muted { color:#a9c9d9 }
+/* =================================================== */
+/* 1. Amabara Y'ibanze (Variables) na Fonts            */
+/* =================================================== */
+@import url('https://fonts.googleapis.com');
 
+:root {
+    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
+    --background-color-nv: #0e1a2a;  /* BG isukuye nk'iya NexVentures */
+    --text-color-nv: #ffffff;      
+    --card-bg-nv: #152233;           /* Background ya Card NSHYASHYA (Isa neza cyane) */
+    --text-muted-nv: #a0a0a0;          
+    --accent-glow-nv: #007bff;      /* Ubururu bwo kumurika */
+}
+
+/* =================================================== */
+/* 2. Imiterere Rusange Y'ikigobe                      */
+/* =================================================== */
+.services-page-nv {
+  background-color: var(--background-color-nv);
+  padding: 80px 5%; 
+  font-family: 'Inter', sans-serif; /* Font nshya */
+  color: var(--text-color-nv);
+  min-height: 100vh;
+}
+
+.container-nv { max-width: 1200px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--text-color-nv); font-family: 'Roboto Mono', monospace; } /* Font nshya kuri heading */
+p { color: var(--text-muted-nv); }
+
+/* =================================================== */
+/* 3. Section Styles (Header, Grid)                    */
+/* =================================================== */
+.services-header-nv { text-align: center; margin-bottom: 50px; }
+.subtitle-nv { color: var(--primary-nv); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+.services-header-nv h1 { font-size: 3rem; margin: 10px 0; }
+.description-nv { font-size: 1.1rem; max-width: 800px; margin: auto; }
+
+
+/* --- Services Grid --- */
+.services-grid-nv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.service-card-nv {
+  background-color: var(--card-bg-nv); /* Background Color Nshya */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid var(--primary-nv); /* Akandi karongo k'ubururu keza hasi */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card-nv:hover {
+    transform: translateY(-5px);
+    background-color: #21354a; /* Gato rireremuka iyo uhagazeho */
+}
+
+.service-icon-nv {
+    font-size: 2.5rem;
+    color: var(--accent-glow-nv); /* Ibara ryiza rya icon */
+    margin-bottom: 15px;
+}
+
+.service-card-nv h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-card-nv p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* =================================================== */
+/* 4. Why Choose Us Section                            */
+/* =================================================== */
+.why-choose-nv { margin-bottom: 80px; }
+.why-choose-nv h2, .testimonials-nv h2, .cta-section-nv h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; }
+
+.choose-grid-nv {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.choose-item-nv {
+    background-color: var(--card-bg-nv);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid rgba(0, 77, 153, 0.1);
+}
+
+.choose-icon-nv { color: var(--primary-nv); font-size: 2rem; margin-bottom: 15px; }
+
+
+/* =================================================== */
+/* 5. Testimonials Section                             */
+/* =================================================== */
+.testimonials-nv { margin-bottom: 80px; }
+
+.testimonial-card-nv {
+    background-color: var(--card-bg-nv);
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quote-icon-nv { font-size: 2rem; color: var(--accent-glow-nv); margin-bottom: 15px; }
+.client-name-nv { margin-top: 15px; font-style: normal; color: var(--text-color-nv); }
+
+
+/* =================================================== */
+/* 6. Ready to Transform Your Vision? (CTA Section)    */
+/* =================================================== */
+.cta-section-nv {
+    text-align: center;
+    background: linear-gradient(90deg, var(--background-color-nv), #05101a);
+    padding: 50px 20px; border-radius: 8px; border: 1px solid var(--primary-nv);
+}
+.cta-section-nv p { margin-bottom: 20px; }
+
+.cta-button-nv {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 10px;
+    padding: 12px 30px; background-color: var(--primary-nv); color: white;
+    text-decoration: none; border-radius: 4px; font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-button-nv:hover { background-color: #0056b3; transform: translateY(-2px); }
+
+
+/* =================================================== */
+/* 7. Mobile Optimization                              */
+/* =================================================== */
+@media (max-width: 768px) {
+  .choose-grid-nv { flex-direction: column; }
+  .services-header-nv h1, .why-choose-nv h2, .testimonials-nv h2, .cta-section-nv h2 { font-size: 2rem; }
+}

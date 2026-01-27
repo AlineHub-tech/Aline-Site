@@ -1,188 +1,183 @@
-.landing {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  background: #000814;
-  overflow: hidden;
-  padding: 40px 0;
+/* =================================================== */
+/* 1. Kwinjiza Font n'Amabara Y'ibanze (Variables)      */
+/* =================================================== */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
+    --text-color-nv: #ffffff;      /* Umweru rusange */
+    --background-color-nv: #0a0a0a;  /* Umukara wijimye */
+    --accent-glow-nv: #007bff;       /* IBARA RYA SLOGAN (Ubururu butoshye) */
+    --whatsapp-color: #25d366;      /* Icyatsi cya WhatsApp */
 }
 
-/* Blue Glow like your image */
-.top-glow {
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 350px;
-  background: radial-gradient(circle, #00eaff55, transparent 70%);
-  filter: blur(50px);
-  z-index: 0;
+/* Reset ya Global */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background-color-nv);
 }
 
-/* Stars Background */
-.stars {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Individual tiny dust stars */
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #f5f3f3;
-  opacity: 0.7;
-  border-radius: 50%;
-  animation: starMove linear infinite;
-}
-
-/* Moving animation */
-@keyframes starMove {
-  from {
-    transform: translateY(0px);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateY(120px);
-    opacity: 1;
-  }
-}
-
-/* Landing content */
-.landing-inner {
-  position: relative;
-  z-index: 3;
+/* =================================================== */
+/* 2. Imiterere y'ikigobe Cyose (Layout & Structure)    */
+/* =================================================== */
+.landing-nexventures.full-page-layout {
+  min-height: 100vh; 
   display: flex;
-  justify-content: center;
+  flex-direction: column; 
+  justify-content: center; /* Hagati kuri screen */
+  position: relative;
+  overflow: hidden; 
+  padding: 40px 20px; 
+  font-family: 'Inter', sans-serif; 
+  color: var(--text-color-nv);
+}
+
+.landing-inner-content {
+  display: flex;
+  flex-direction: column; /* Mobile default is column */
   align-items: center;
-  gap: 60px;
-  padding: 20px;
+  justify-content: center; 
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px; 
+  z-index: 10; 
+  margin: auto; 
 }
 
-.hero-photo {
-  width: 330px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #00eaff38;
-}
-
-.right h1 {
-  font-size: 34px;
-  color: white;
-}
-
-/* .animated-slogan span {
-  display: none;
-  font-size: 25px;
-  font-weight: bold;
-  color: #00eaff;
-}
-
-
-.animated-slogan span:nth-child(1) { display: inline; } */
-
-/* CTA Buttons */
-.btn {
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-}
-.cta-row{display:flex ;
-gap:10px;
-margin-left: 10%;
-margin-top:5%;
-}
-.primary {
-  background: #00eaff;
-  color: #000814;
-}
-
-.ghost {
- border: 3px solid white;
-  color: white;
-}
-
-.outline {
-  border: 3px solid white;
-  color: white;
-}
-
-.lead { margin-left:5%;
-  margin-top:-13%;
-  color: #cfcfcf;
-}
-
-.quick-list {
-  margin-top: 10px;
-  color: #aaa;
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-  .landing-inner {
-    flex-direction: column;
-    text-align: center;
+/* Desktop Styles (>= 992px) */
+@media (min-width: 992px) {
+  .landing-inner-content {
+    flex-direction: row; /* Desktop is row */
+    text-align: left;
   }
-}
-.slogan {
-  text-align:center;
-  padding:3rem 1rem;
-  overflow:hidden;
-  position:relative;
+  .left-side-nv { flex: 1; padding-right: 40px; }
+  .right-side-nv { flex: 0.8; display: flex; justify-content: flex-end; }
+  .social-buttons { justify-content: flex-start !important; } 
+  .main-slogan-buttons { flex-direction: column; align-items: flex-start; }
 }
 
-.animated-slogan {
-  display:block;
-  position:relative;
-  padding: 1rem 2rem;
-  color:white;
-  font-size:1rem;
-  font-weight:bold;
-  border-radius:12px;
-  min-height:3rem;
-  line-height:1.5;
-  margin:0 auto 1rem auto;
-  max-width:90%;
-  overflow:hidden;
+/* =================================================== */
+/* 3. Background Glow Effect                           */
+/* =================================================== */
+.blue-glow-bg {
+    position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 77, 153, 0.3) 0%, rgba(10, 10, 10, 0) 60%);
+    border-radius: 50%; pointer-events: none; z-index: 1; opacity: 0.7;
 }
 
-.animated-slogan span {
-  position:absolute;
-  width:100%;
-  left:0;
-  top:0;
-  opacity:0;
-  padding:1rem 2rem;
-  border-radius:12px;
-  animation: slideSlogan 50s linear infinite;
-  display:block;
-  text-align:center;
+/* =================================================== */
+/* 4. Ifoto mu ishusho y'Ikiziga (Hero Photo)          */
+/* =================================================== */
+.hero-photo-circle-nv {
+  width: 300px; height: 300px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  box-shadow: 0 0 50px rgba(0, 77, 153, 0.5); 
+  display: block;
+  margin: 0 auto; 
+  border: 4px solid var(--primary-nv); 
+}
+
+/* =================================================== */
+/* 5. Amagambo (Text Content, H1, Description)          */
+/* =================================================== */
+.subtitle-nv { 
+    color: var(--primary-nv); font-size: 1rem; font-weight: 600; 
+    margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; 
+}
+
+/* H1 (Ubu isobanura icyo ukora muri rusange) */
+.left-side-nv h1 {
+  font-size: 2.5rem; 
+  margin-bottom: 20px;
+  color: white;
+  line-height: 1.2;
+  font-weight: 700; 
+}
+
+/* Description (Tagline) */
+.tagline-nv { 
+    font-size: 1rem; color: var(--text-color-nv); margin-top: 15px; 
+    line-height: 1.6; max-width: 500px;
+}
+.strong-description { font-weight: 600; color: #ffffff; }
+
+
+/* =================================================== */
+/* 6. Slogan Animation (Animated Text)                 */
+/* =================================================== */
+.slogan-container-nv { height: 3rem; margin-bottom: 20px; overflow: hidden; }
+
+.animated-slogan-text-nv {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--accent-glow-nv); /* Ibara ryiza kandi risomwa neza */
+  animation: fadeInOut 2.5s infinite forwards; 
+  display: inline-block;
+  margin-bottom:3%;
+  opacity: 0; 
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* =================================================== */
+/* 7. BUTO NKURU NSHYA (Slogan Buttons)                 */
+/* =================================================== */
+.main-slogan-buttons {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.slogan-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: fit-content; 
 }
 
 
-.animated-slogan span:nth-child(1) { animation-delay:0s; background:#1976d2;}
-.animated-slogan span:nth-child(2) { animation-delay:5s; background:#43a047;}
-.animated-slogan span:nth-child(3) { animation-delay:10s; background:#afae4e;}
-.animated-slogan span:nth-child(4) { animation-delay:15s; background:#7c5396;}
-.animated-slogan span:nth-child(5) { animation-delay:20s; background:#4e7d97;}
-.animated-slogan span:nth-child(6) { animation-delay:25s; background:#1d1a13;}
-.animated-slogan span:nth-child(7) { animation-delay:30s; background:#6e544c;}
-.animated-slogan span:nth-child(8) { animation-delay:35s; background:#ade2dd;}
-.animated-slogan span:nth-child(9) { animation-delay:40s; background:#765983;}
-.animated-slogan span:nth-child(10){ animation-delay:45s; background:#865569;}
+/* Socials CTA row (GitHub, LinkedIn, Portfolio) */
+.cta-row-nv { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; justify-content: center; }
 
-@keyframes slideSlogan {
-  0% { opacity:0; transform:translateY(100%);}
-  5% { opacity:1; transform:translateY(0);}
-  20% { opacity:1; transform:translateY(0);}
-  25% { opacity:0; transform:translateY(-100%);}
-  100% { opacity:0; transform:translateY(-100%);}
+.btn-nv {
+  padding: 12px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; 
+  display: flex; align-items: center; gap: 8px; transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-nv:hover { transform: translateY(-2px); }
 
+.primary-nv { background-color: var(--primary-nv); color: white; border: none; box-shadow: 0 5px 20px rgba(0, 77, 153, 0.4); }
+.primary-nv:hover { background-color: #0056b3; }
+.ghost-nv { background-color: transparent; color: var(--text-color-nv); border: 1px solid rgba(255, 255, 255, 0.3); }
+.ghost-nv:hover { background-color: rgba(255, 255, 255, 0.1); border-color: var(--text-color-nv); }
+
+
+/* =================================================== */
+/* 8. WhatsApp Float Button & Mobile Optimization      */
+/* =================================================== */
+.whatsapp-float-nv {
+    position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+    background-color: var(--whatsapp-color); color: white; border-radius: 50px;
+    text-align: center; box-shadow: 2px 2px 3px #999; display: flex;
+    align-items: center; justify-content: center; z-index: 100;
+    transition: transform 0.3s ease;
+}
+.whatsapp-float-nv:hover { transform: scale(1.1); background-color: #128C7E; }
+.whatsapp-icon-nv { font-size: 30px; }
+
+@media (max-width: 768px) {
+    .left-side-nv h1 { font-size: 2rem; } 
+    .main-slogan-buttons { align-items: stretch; } /* Ziba ngari kuri mobile */
+    .slogan-btn { width: 100%; }
+    .whatsapp-float-nv { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    .whatsapp-icon-nv { font-size: 25px; }
 }

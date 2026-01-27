@@ -1,22 +1,89 @@
-.nav {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 20px;
-  background:linear-gradient(180deg, rgb(0, 0, 0), rgba(8,10,14,0.3));
-  position:sticky;
-  top:0;
-  z-index:50;
-  border-bottom:1px solid rgba(255,255,255,0.03);
-}
-.brand { color:#fff; font-weight:700; text-decoration:none; font-size:18px }
-.nav-center a { margin:0 12px; color:#fcfdfd; text-decoration:none; font-size:14px }
-.nav-center a.active { color:#00c2ff; font-weight:600 }
-.nav-right a { margin-left:12px; color:#bcd3e6 }
-.nav-toggle { display:none; background:transparent; border:none; color:#fff; margin-left:12px }
-@media(max-width:820px){
-  .nav-center { position:fixed; inset:60px 12px auto 12px; background:#07101a; flex-direction:column; padding:14px; border-radius:8px; display:none }
-  .nav-center.open { display:flex }
-  .nav-toggle { display:inline }
+/* =================================================== */
+/* 1. Amabara Y'ibanze (Variables) na Fonts            */
+/* =================================================== */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
+    --background-color-nv: #0e1a2a;  /* Umukara/ubururu wijimye cyane */
+    --text-color-nv: #ffffff;      /* Umweru rusange */
+    --accent-glow-nv: #007bff;       /* IBARA RYA ICON/SLOGAN */
 }
 
+/* =================================================== */
+/* 2. Imiterere y'ikigobe Cyose (Layout & Structure)    */
+/* =================================================== */
+.nav-nv {
+  background-color: var(--background-color-nv);
+  color: var(--text-color-nv);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%; 
+  position: sticky; 
+  top: 0;
+  z-index: 1000; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  font-family: 'Inter', sans-serif;
+}
+
+.brand-nv {
+  color: var(--text-color-nv); text-decoration: none; font-size: 1.5rem;
+  font-weight: 700; transition: color 0.3s;
+  display: flex; align-items: center; gap: 10px; 
+}
+.brand-nv:hover { color: var(--primary-nv); }
+
+.brand-icon-nv {
+    color: var(--accent-glow-nv); 
+    font-size: 1.8rem; 
+}
+
+/* =================================================== */
+/* 3. Navigation Links (Hagati)                        */
+/* =================================================== */
+.nav-center-nv { 
+    display: flex; 
+    gap: 25px; /* Gahunda nshya kugira ngo links zose zihwanye neza */
+}
+
+.nav-center-nv a {
+  color: var(--text-color-nv); text-decoration: none; font-weight: 400;
+  padding: 5px 0; position: relative; transition: color 0.3s;
+  display: flex; align-items: center; gap: 8px; 
+}
+
+.nav-icon-nv { color: var(--accent-glow-nv); font-size: 1rem; }
+.nav-center-nv a:hover { color: var(--primary-nv); }
+.nav-center-nv a.active { color: var(--primary-nv); font-weight: 600; }
+
+/* Akadirishya ko munsi ya link */
+.nav-center-nv a::after {
+    content: ''; position: absolute; width: 0; height: 2px; display: block;
+    margin-top: 5px; left: 0; background: var(--accent-glow-nv);
+    transition: width 0.3s ease; 
+}
+
+.nav-center-nv a:hover::after,
+.nav-center-nv a.active::after { width: 100%; background: var(--primary-nv); }
+
+/* =================================================== */
+/* 4. Icyerekezo cy'Iburyo (Toggle Button Gusa)         */
+/* =================================================== */
+.nav-right-nv { display: flex; align-items: center; }
+.nav-toggle-nv { background: none; border: none; color: var(--text-color-nv); font-size: 1.5rem; cursor: pointer; display: none; }
+
+/* =================================================== */
+/* 5. Responsive Styles (Mobile Menu)                  */
+/* =================================================== */
+@media (max-width: 992px) {
+  .nav-center-nv {
+    display: none; flex-direction: column; position: absolute; top: 65px; left: 0;
+    width: 100%; background-color: var(--background-color-nv);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); padding: 20px 5%; gap: 10px;
+  }
+  .nav-center-nv.open { display: flex; }
+  .nav-toggle-nv { display: block; } 
+  .nav-center-nv a { padding: 10px 0; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .nav-center-nv a:last-child { border-bottom: none; }
+}

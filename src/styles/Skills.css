@@ -1,4 +1,138 @@
-.skills .container { max-width:1100px; margin:0 auto; color:#ddf6ff }
-.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:12px }
-.skill-card { background:rgba(0, 0, 0, 0.753); padding:14px; border-radius:10px }
-.skill-card ul { margin-top:8px; color:#bcd3e6 }
+/* =================================================== */
+/* 1. Amabara Y'ibanze (Variables) na Fonts            */
+/* =================================================== */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
+    --background-color-nv: #0e1a2a;  /* BG isukuye nk'iya NexVentures */
+    --text-color-nv: #ffffff;      
+    --card-bg-nv: #152233;           /* Background ya Card NSHYASHYA (Isa neza cyane) */
+    --text-muted-nv: #a0a0a0;          
+    --accent-glow-nv: #007bff;      /* Ubururu bwo kumurika */
+}
+
+/* =================================================== */
+/* 2. Imiterere Rusange Y'ikigobe                      */
+/* =================================================== */
+.skills-page-nv {
+  background-color: var(--background-color-nv);
+  padding: 80px 5%; 
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color-nv);
+  min-height: 100vh;
+}
+
+.container-nv { max-width: 1200px; margin: 0 auto; }
+h1, h2, h3, h4 { color: var(--text-color-nv); font-family: 'Roboto Mono', monospace; } /* Font nshya kuri heading */
+p { color: var(--text-muted-nv); }
+
+/* =================================================== */
+/* 3. Header Section                                   */
+/* =================================================== */
+.skills-header-nv { text-align: center; margin-bottom: 50px; }
+.subtitle-nv { color: var(--primary-nv); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+.skills-header-nv h1 { font-size: 3rem; margin: 10px 0; }
+.description-nv { font-size: 1.1rem; max-width: 800px; margin: auto; }
+
+
+/* =================================================== */
+/* 4. Skills Grid Section                              */
+/* =================================================== */
+.skills-grid-nv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.skill-card-nv {
+  background-color: var(--card-bg-nv); 
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid var(--primary-nv); /* Akandi karongo k'ubururu keza ku ruhande */
+}
+
+.skill-card-nv h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--accent-glow-nv);
+}
+
+.skill-card-nv ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-card-nv ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted-nv);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skill-card-nv ul li:last-child { border-bottom: none; }
+
+.skill-check-icon-nv {
+    color: var(--primary-nv);
+    font-size: 0.8rem;
+}
+
+
+/* =================================================== */
+/* 5. Our Philosophy Section                           */
+/* =================================================== */
+.philosophy-nv { margin-bottom: 80px; }
+.philosophy-nv h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; }
+
+.philosophy-grid-nv {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.philosophy-item-nv {
+    background-color: var(--card-bg-nv);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid rgba(0, 77, 153, 0.1);
+}
+
+.philosophy-icon-nv { color: var(--accent-glow-nv); font-size: 2.5rem; margin-bottom: 15px; }
+.philosophy-item-nv h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.philosophy-item-nv p { font-size: 0.9rem; }
+
+
+/* =================================================== */
+/* 6. Ready to Transform Your Vision? (CTA Section)    */
+/* =================================================== */
+.cta-section-nv {
+    text-align: center;
+    background: linear-gradient(90deg, var(--background-color-nv), #05101a);
+    padding: 50px 20px; border-radius: 8px; border: 1px solid var(--primary-nv);
+}
+.cta-section-nv h2 { font-size: 2rem; margin-bottom: 10px; }
+.cta-section-nv p { margin-bottom: 20px; }
+
+.cta-button-nv {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 30px; background-color: var(--primary-nv); color: white;
+    text-decoration: none; border-radius: 4px; font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-button-nv:hover { background-color: #0056b3; transform: translateY(-2px); }
+
+
+/* =================================================== */
+/* 7. Mobile Optimization                              */
+/* =================================================== */
+@media (max-width: 768px) {
+  .philosophy-grid-nv { flex-direction: column; }
+  .skills-header-nv h1, .philosophy-nv h2, .cta-section-nv h2 { font-size: 2rem; }
+}

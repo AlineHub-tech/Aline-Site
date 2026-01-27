@@ -1,0 +1,95 @@
+/* General Header Styles (Desktop First) */
+.app-header-nv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color:  #0e1a2a; /* Dark background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  color: white;
+  /* Ensure smooth transition if layout changes */
+  transition: all 0.3s ease; 
+}
+
+.logo-nv {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* A primary color for the logo */
+}
+
+/* Navigation Button Container */
+.nav-buttons-nv {
+  display: flex;
+  gap: 1rem;
+  /* Distribute space equally among buttons */
+  justify-content: space-around; 
+  flex-wrap: wrap; /* Allows wrapping on smaller screens if necessary */
+}
+
+/* Individual Button Styles */
+.nav-button-nv {
+  padding: 0.75rem 1rem;
+  background-color:  #152233; ; /* Darker button background */
+  color: white;
+  border: 1px solid  #162538; ; /* Subtle border */
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-grow: 1; /* Makes buttons grow to fill the container space evenly */
+  text-align: center; /* Centers text inside the button */
+  white-space: nowrap; /* Prevents text from wrapping inside the button */
+}
+
+.nav-button-nv:hover {
+  background-color:#0056b3; /* Hover color */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Style for the currently active button */
+.nav-button-nv.active-btn {
+    background-color: #007bff; /* Primary color for active page */
+    font-weight: bold;
+    border-color: #0056b3;
+}
+
+
+/* --- Responsive Design --- */
+
+/* Tablet View (e.g., screens smaller than 768px) */
+@media (max-width: 768px) {
+  .app-header-nv {
+    flex-direction: column; /* Stack logo and nav vertically */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-buttons-nv {
+    /* Use a grid or wrap for better use of space on tablets */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
+    gap: 0.5rem;
+    width: 100%; /* Take full width */
+  }
+
+  .nav-button-nv {
+      padding: 0.5rem; /* Smaller padding */
+      font-size: 0.9rem;
+  }
+}
+
+/* Mobile View (e.g., screens smaller than 576px) */
+@media (max-width: 576px) {
+  .logo-nv {
+    font-size: 1.2rem;
+  }
+  
+  .nav-buttons-nv {
+    grid-template-columns: repeat(2, 1fr); /* 2 buttons per row for very small screens */
+  }
+
+  .nav-button-nv {
+    font-size: 0.8rem;
+  }
+}
