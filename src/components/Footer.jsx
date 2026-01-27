@@ -82,7 +82,9 @@ export default function Footer() {
       </div>
 
       <div className="copyright-nv">
-          <p>&copy; {new Date().getFullYear()} Umugwaneza Aline. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Umugwaneza Aline. All rights reserved | Developed by <a href="https://aline-site-seven.vercel.app" target="_blank" rel="noopener noreferrer">
+              <span className="developer-name">Umugwaneza Aline</span>
+            </a></p>
       </div>
     </footer>
   );
