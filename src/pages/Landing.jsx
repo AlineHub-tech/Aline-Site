@@ -1,67 +1,87 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaWhatsapp, FaArrowRight, FaCode, FaPaintBrush } from "react-icons/fa";
-import profile from "../assets/profile.png"; 
+import { FaGithub, FaLinkedin, FaWhatsapp, FaArrowRight, FaCode, FaRocket, FaTerminal } from "react-icons/fa";
+import profile from "../assets/profile.PNG"; 
 import "../styles/Landing.css";
 
 const SLOGANS = [
-  "Crafting Digital Experiences", "Innovating with Code", "Turning Ideas into Reality", 
-  "Building Modern Web Solutions", "Design Meets Functionality", "Problem Solver at Heart", 
-  "Your Next Tech Partner", "Passionate about Web Dev", "Clean Code Advocate", "Frontend Expert"
+  "Frontend Developer", "UI/UX Enthusiast", "React Specialist", "Creative Coder"
 ];
-const WHATSAPP_NUMBER = "0796023452";
+const WHATSAPP_NUMBER = "250796023452"; 
 
 export default function Landing() {
-  const [currentSloganIndex, setCurrentSloganIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentSloganIndex(prevIndex => (prevIndex + 1) % SLOGANS.length);
-    }, 2500); 
-    return () => clearInterval(intervalId);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % SLOGANS.length);
+    }, 3000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="landing-nexventures full-page-layout">
-      <div className="blue-glow-bg"></div>
-      <div className="landing-inner-content">
-        <div className="left-side-nv">
-          <p className="subtitle-nv">Welcome to my Portfolio</p>
+    <section className="hero-section-nv">
+      {/* Background Glows */}
+      <div className="orb orb-1"></div>
+      <div className="orb orb-2"></div>
+
+      <div className="hero-container">
+        {/* Left Side: Text Content */}
+        <div className="hero-content-left">
+          <div className="badge-nv">
+            <span className="pulse-dot"></span>
+            Available for new projects
+          </div>
           
-          {/* Buto ebyiri zikuru ziri mu mwanya w'izina n'description */}
-          <div className="main-slogan-buttons">
-              <button className="btn-nv primary-nv slogan-btn">
-                  <FaCode/> Coding With Purpose, Design With Passion! 
-              </button>
-              <button className="btn-nv ghost-nv slogan-btn">
-                  <FaPaintBrush/> Creativity + Code = Power to build the future
-              </button>
+          <h1 className="hero-title">
+            Hi, I'm <span className="name-gradient">Aline Umugwaneza</span>
+          </h1>
+
+          <div className="dynamic-slogan">
+            <FaTerminal className="term-icon" />
+            <span className="typing-text">{SLOGANS[index]}</span>
           </div>
 
-          <section className="slogan-container-nv">
-            <h2 className="animated-slogan-text-nv">
-              {SLOGANS[currentSloganIndex]}
-            </h2>
-          </section>
-             
-          {/* Description nshya icumita ku ntego */}
-          <p className="tagline-nv strong-description">
-            I specialize in building elegant, efficient, and user-friendly solutions. Explore how creativity and code combine to power the future of your projects.
+          <p className="hero-description">
+            I craft high-performance, visually stunning web experiences. 
+            Bridging the gap between <strong>clean code</strong> and <strong>modern design</strong>.
           </p>
-          <div className="cta-row-nv social-buttons">
-            <Link className="btn-nv primary-nv" to="/projects">View My Portfolio <FaArrowRight /></Link>
-            <a className="btn-nv ghost-nv" href="https://github.com" target="_blank" rel="noreferrer">GitHub <FaGithub /></a>
-            <a className="btn-nv ghost-nv" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <FaLinkedin /></a>
+
+          <div className="hero-actions">
+            <Link to="/projectpage" className="btn-main">
+              Explore My Work <FaArrowRight />
+            </Link>
+            <div className="social-group">
+              <a href="https://github.com" className="social-link" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href="https://linkedin.com" className="social-link" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+            </div>
           </div>
         </div>
-        
-        <div className="right-side-nv">
-          <img src={profile} alt="Aline Umugwaneza" className="hero-photo-circle-nv" />
+
+        {/* Right Side: Image with Decorations */}
+        <div className="hero-content-right">
+          <div className="image-stack">
+            <div className="image-border-decoration"></div>
+            <img src={profile} alt="Aline Umugwaneza" className="main-hero-img" />
+            
+            {/* Floating Stats - Hidden on Mobile for clean look */}
+            <div className="floating-card card-1">
+              <FaCode className="card-icon" />
+              <span>Clean Code</span>
+            </div>
+            <div className="floating-card card-2">
+              <FaRocket className="card-icon" />
+              <span>Fast Delivery</span>
+            </div>
+          </div>
         </div>
       </div>
-      <a href={`https://wa.me{WHATSAPP_NUMBER}`} className="whatsapp-float-nv" target="_blank" rel="noopener noreferrer" aria-label="Chat with Aline on WhatsApp">
-        <FaWhatsapp className="whatsapp-icon-nv" />
-      </a>
+
+      {/* Floating WhatsApp Button
+      <a href={`https://wa.me{WHATSAPP_NUMBER}`} className="whatsapp-float" target="_blank" rel="noreferrer">
+        <FaWhatsapp />
+        <span className="wa-tooltip">Let's Chat!</span>
+      </a> */}
     </section>
   );
 }
-

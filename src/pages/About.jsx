@@ -1,97 +1,104 @@
-import "../styles/About.css";
 import React from "react";
-import { FaEye, FaRocket, FaHandsHelping, FaCheckCircle, FaLaptopCode, FaTools, FaVideo, FaLightbulb, FaArrowRight, FaStar, FaCodeBranch, FaUsers, FaGrinStars } from "react-icons/fa"; 
+import { 
+  FaUserTie, FaRocket, FaHandsHelping, FaLaptopCode, FaTools, 
+  FaVideo, FaArrowRight, FaStar, FaCodeBranch, FaCheckCircle, 
+  FaChartLine, FaGlobe, FaCogs, FaQuoteLeft 
+} from "react-icons/fa"; 
 import { Link } from "react-router-dom";
+import "../styles/About.css";
 
 export default function About() {
+  const expertStats = [
+    { icon: <FaUserTie />, label: "Founder, ByteFlow Ltd" },
+    { icon: <FaCodeBranch />, label: "Full-Stack Specialist" },
+    { icon: <FaChartLine />, label: "Digital Strategist" },
+    { icon: <FaGlobe />, label: "Web Hosting Expert" },
+  ];
+
   return (
-    <section className="about-page-nv" id="about">
+    <section className="about-page-nv">
+      <div className="about-glow"></div>
+
       <div className="container-nv">
-        
-        {/* === SECTION 1: Header and Proven Excellence === */}
+        {/* Header Section */}
         <header className="about-header-nv">
-            <p className="subtitle-nv">Our Journey of Excellence</p>
-            <h1>Proven Excellence & Impact</h1>
-            <div className="divider-nv"></div>
+          <span className="badge-nv">Executive Profile</span>
+          <h1 className="section-title">Umugwaneza <span className="highlight">Aline</span></h1>
+          <p className="header-desc">
+            Founder of <strong>ByteFlow Ltd</strong>. A multidisciplinary technologist dedicated to building 
+            high-impact digital ecosystems through code, strategy, and creative media.
+          </p>
         </header>
 
-        {/* Example Stats Card */}
-        <div className="stats-showcase-nv">
-            <div className="stat-card-nv">
-                <FaStar className="stat-icon-nv"/>
-                <span>15+ Projects Completed</span>
+        {/* Professional Stats */}
+        <div className="stats-grid-nv">
+          {expertStats.map((stat, index) => (
+            <div className="stat-card-nv" key={index}>
+              <div className="stat-icon-wrapper">{stat.icon}</div>
+              <span className="stat-label">{stat.label}</span>
             </div>
-            <div className="stat-card-nv">
-                <FaCodeBranch className="stat-icon-nv"/>
-                <span>3+ Years Experience</span>
-            </div>
-            <div className="stat-card-nv">
-                <FaUsers className="stat-icon-nv"/>
-                <span>Community Helper</span>
-            </div>
-            <div className="stat-card-nv">
-                <FaGrinStars className="stat-icon-nv"/>
-                <span>Satisfied Clients</span>
-            </div>
+          ))}
         </div>
         
-        {/* === SECTION 2: Built on Purpose (Vision, Mission, Expertise) === */}
-        <div className="purpose-section-nv">
-            <h2>Built on Purpose</h2>
-            <div className="purpose-grid-nv">
-                <div className="card-purpose-nv">
-                    <FaEye className="purpose-icon-nv"/>
-                    <h3>Vision</h3>
-                    <p>To be a leading developer in building innovative and sustainable digital solutions that empower communities and drive technological advancement across Africa.</p>
-                </div>
-                <div className="card-purpose-nv">
-                    <FaRocket className="purpose-icon-nv"/>
-                    <h3>Mission</h3>
-                    <p>To deliver high-quality, efficient, and user-centric web applications and creative media that solve real-world problems and exceed client expectations.</p>
-                </div>
-            </div>
-
-            {/* Expertise Section inside Purpose */}
-            <div className="expertise-container-nv">
-                <h3>Expertise, Tools & Workspace</h3>
-                <div className="expertise-grid-nv">
-                    <div className="expertise-item-nv">
-                        <FaLaptopCode className="expertise-icon-nv"/>
-                        <h4>Software Development</h4>
-                        <p>React.js, Node.js, JavaScript, Python, PostgreSQL, MongoDB, HTML5, CSS3/Tailwind CSS.</p>
-                    </div>
-                    <div className="expertise-item-nv">
-                        <FaTools className="expertise-icon-nv"/>
-                        <h4>Workspace & Editors</h4>
-                        <p>VS Code, Sublime Text, GitHub, Vercel, Netlify, Postman, Apache.</p>
-                    </div>
-                    <div className="expertise-item-nv">
-                        <FaVideo className="expertise-icon-nv"/>
-                        <h4>Videography & Design</h4>
-                        <p>Premiere Pro, After Effects, DaVinci Resolve, Photoshop, Figma, Lightroom.</p>
-                    </div>
-                </div>
-            </div>
+        {/* Personal Story & ByteFlow Ltd */}
+        <div className="grid-two-cols">
+          <div className="purpose-card-nv">
+            <div className="p-icon-bg"><FaStar /></div>
+            <h3>Who I Am</h3>
+            <p>I am a <strong>Full-Stack Developer</strong> and <strong>Creative Director</strong> with a mission 
+            to redefine the digital landscape in Rwanda and beyond. My expertise spans across technical 
+            development and market psychology.</p>
+          </div>
+          <div className="purpose-card-nv">
+            <div className="p-icon-bg"><FaRocket /></div>
+            <h3>The ByteFlow Vision</h3>
+            <p>As the <strong>Founder of ByteFlow Ltd</strong>, I lead a vision to provide 360° solutions: 
+            from <strong>Domain Names</strong> and <strong>Web Hosting</strong> to <strong>SEO</strong>, 
+            <strong>Photography</strong>, and <strong>Videography</strong>.</p>
+          </div>
         </div>
 
-        {/* === SECTION 3: What Drives Us === */}
-        <div className="drives-us-section-nv">
-            <h2>What Drives Us</h2>
-            <div className="drives-content-nv">
-                <FaHandsHelping className="drives-icon-nv"/>
-                <p>Our passion lies in leveraging technology to create tangible impact. We are committed to continuous learning, team collaboration, and solving complex problems with purpose. This drive ensures every project is delivered with excellence and innovation.</p>
+        {/* Core Competencies (Expertise) */}
+        <div className="expertise-section-nv">
+          <h2 className="sub-title">Core Competencies</h2>
+          <div className="expertise-grid-nv">
+            <div className="expertise-card">
+              <FaLaptopCode className="exp-icon" />
+              <h4>Development & Infrastructure</h4>
+              <p>Full-Stack Web Apps, Secure Web Hosting, Domain Management, and SSL Implementation.</p>
             </div>
+            <div className="expertise-card">
+              <FaChartLine className="exp-icon marketing-icon" />
+              <h4>Growth & Strategy</h4>
+              <p>Advanced SEO, Digital Marketing campaigns, Meta Ads, and Data Analytics for ROI.</p>
+            </div>
+            <div className="expertise-card">
+              <FaVideo className="exp-icon creative-icon" />
+              <h4>Creative Production</h4>
+              <p>Professional Videography, Photography, and High-End Video Editing for modern brands.</p>
+            </div>
+          </div>
         </div>
 
-        {/* === SECTION 4: Ready to Transform Your Vision? (CTA) === */}
-        <div className="cta-section-nv">
-            <h2>Ready to Transform Your Vision?</h2>
-            <p>Meet the visionary developer ready to bring your ideas to life.</p>
-            <Link to="/contact" className="cta-button-nv">
-                Let's Collaborate <FaArrowRight/>
-            </Link>
+        {/* CEO Quote / Philosophy */}
+        <div className="ceo-quote-nv">
+          <FaQuoteLeft className="quote-icon" />
+          <p>
+            "At the heart of every great project is a perfect balance between technical 
+            excellence and creative storytelling. I founded <strong>ByteFlow Ltd</strong> to be 
+            the home of that balance."
+          </p>
+          <span className="quote-author">— Umugwaneza Aline</span>
         </div>
 
+        {/* Final CTA */}
+        <div className="about-cta-nv">
+          <h2>Ready to Launch Your Vision?</h2>
+          <p>Let's collaborate on your next big project and scale your brand together.</p>
+          <Link to="/contact" className="btn-main">
+            Let's Talk Business <FaArrowRight />
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,79 +1,120 @@
-import "../styles/Services.css";
 import React from "react";
-import { FaReact, FaNodeJs, FaDatabase, FaCamera, FaPaintBrush, FaMicrosoft, FaJava, FaVideo, FaCheckCircle, FaStar, FaQuoteLeft, FaArrowRight, FaUsers } from "react-icons/fa"; 
 import { Link } from "react-router-dom";
+import { 
+  FaReact, FaNodeJs, FaServer, FaChartLine, FaSearchDollar, 
+  FaVideo, FaPaintBrush, FaCheckCircle, FaQuoteLeft, FaArrowRight, 
+  FaGlobe, FaShieldAlt, FaRocket 
+} from "react-icons/fa"; 
+import "../styles/Services.css";
 
 const servicesList = [
-  { icon: <FaReact/>, title: "Frontend Development", desc: "React.js, JavaScript (ES6+), TailwindCSS, UI/UX intuitive layouts & motion, Responsive UI, State Management." },
-  { icon: <FaNodeJs/>, title: "Backend Development", desc: "Node.js, Express, REST APIs, simple PHP backends, Form handling, LocalStorage + API workflows." },
-  { icon: <FaJava/>, title: "Programming Languages", desc: "Java, Python, C, C++ for various application logic and problem-solving scenarios." },
-  { icon: <FaDatabase/>, title: "Database Management", desc: "MongoDB (NoSQL data design), PostgreSQL (relational database modelling), MySQL, Query optimization." },
-  { icon: <FaCamera/>, title: "Photography", desc: "Camera handling, Composition, Lighting, Creative shooting, Mobile Photography & Visual Storytelling." },
-  { icon: <FaPaintBrush/>, title: "Design & Creativity", desc: "Photoshop CC, Adobe Illustrator, Canva, Branding, Posters, Visual Identity, Photo Editing, Color Grading." },
-  { icon: <FaVideo/>, title: "Videography & Content", desc: "Editing with Adobe Premiere Pro, After Effects, DaVinci Resolve. Content creation for social media and business." },
-  { icon: <FaMicrosoft/>, title: "ICT & Productivity", desc: "Word, Excel, PowerPoint, Publisher, Google Apps, Cloud Storage, Documentation and basic IT support." }
+  { 
+    icon: <FaReact/>, 
+    title: "Web Development", 
+    desc: "Building high-performance apps using React.js, TailwindCSS, and Next.js. Focused on speed, SEO, and mobile-first design.",
+    category: "tech"
+  },
+  { 
+    icon: <FaChartLine/>, 
+    title: "Digital Marketing", 
+    desc: "Data-driven strategies for social media growth, Meta Ads (FB/IG), and high-conversion marketing campaigns.",
+    category: "marketing"
+  },
+  { 
+    icon: <FaSearchDollar/>, 
+    title: "SEO Optimization", 
+    desc: "Boosting your search engine rankings to ensure your website is discovered by the right audience at the right time.",
+    category: "marketing"
+  },
+  { 
+    icon: <FaServer/>, 
+    title: "Hosting & Domains", 
+    desc: "Reliable web hosting setup, Domain registration, DNS management, and SSL security for a 100% uptime experience.",
+    category: "tech"
+  },
+  { 
+    icon: <FaVideo/>, 
+    title: "Videography & Content", 
+    desc: "Professional video editing (Premiere Pro/After Effects) and content creation tailored for modern social media.",
+    category: "creative"
+  },
+  { 
+    icon: <FaPaintBrush/>, 
+    title: "Brand Identity", 
+    desc: "UI/UX Design in Figma, logo creation, and visual storytelling to give your brand a unique and professional voice.",
+    category: "creative"
+  }
 ];
 
 export default function Services() {
   return (
-    <section className="services-page-nv" id="services">
+    <section className="services-page-nv">
+      <div className="services-glow"></div>
+
       <div className="container-nv">
-        
         <header className="services-header-nv">
-            <p className="subtitle-nv">Our Offerings</p>
-            <h1>Comprehensive Digital Services</h1>
-            <p className="description-nv">I offer a combination of technical and creative services — practical solutions you can use to grow your business or project.</p>
+          <span className="badge-nv">Expert Solutions</span>
+          <h1>Comprehensive Digital <span className="highlight">Services</span></h1>
+          <p className="description-nv">I offer a 360-degree approach to digital success—from the first line of code to the final marketing campaign.</p>
         </header>
 
         <div className="services-grid-nv">
           {servicesList.map((s, idx) => (
-            <div key={idx} className="service-card-nv">
+            <div key={idx} className={`service-card-nv ${s.category}`}>
               <div className="service-icon-nv">{s.icon}</div>
               <h4>{s.title}</h4>
               <p>{s.desc}</p>
+              <div className="card-footer-nv">
+                <span className="learn-more">Get Started <FaArrowRight/></span>
+              </div>
             </div>
           ))}
         </div>
 
+        {/* Value Proposition */}
         <div className="why-choose-nv">
-            <h2>Why Choose Us?</h2>
-            <div className="choose-grid-nv">
-                <div className="choose-item-nv">
-                    <FaCheckCircle className="choose-icon-nv"/>
-                    <h4>Expertise & Innovation</h4>
-                    <p>Leveraging the latest technologies to build cutting-edge solutions tailored to your needs.</p>
-                </div>
-                <div className="choose-item-nv">
-                    <FaCheckCircle className="choose-icon-nv"/>
-                    <h4>Reliability & Support</h4>
-                    <p>Committed to delivering robust solutions with ongoing support and clear communication.</p>
-                </div>
-                <div className="choose-item-nv">
-                    <FaCheckCircle className="choose-icon-nv"/>
-                    <h4>Versatility</h4>
-                    <p>Blending technical development skills with graphic design and multimedia expertise for holistic results.</p>
-                </div>
+          <h2 className="sub-title">Why Partner With Me?</h2>
+          <div className="choose-grid-nv">
+            <div className="choose-item-nv">
+              <FaRocket className="choose-icon-nv"/>
+              <h4>End-to-End Delivery</h4>
+              <p>I handle everything: Design, Development, Hosting, and Marketing. You only need one partner.</p>
             </div>
+            <div className="choose-item-nv">
+              <FaShieldAlt className="choose-icon-nv"/>
+              <h4>Reliability & Trust</h4>
+              <p>Secure hosting and clean code ensure your business stays online and safe 24/7.</p>
+            </div>
+            <div className="choose-item-nv">
+              <FaGlobe className="choose-icon-nv"/>
+              <h4>Global Standards</h4>
+              <p>I build solutions that use world-class technologies to help you compete in any market.</p>
+            </div>
+          </div>
         </div>
 
+        {/* Testimonial Section */}
         <div className="testimonials-nv">
-            <h2>What Our Clients Say</h2>
-            <div className="testimonial-card-nv">
-                <FaQuoteLeft className="quote-icon-nv"/>
-                <p>"Aline delivered beyond our expectations! The website is fast, beautiful, and the video content she created took our marketing to the next level."</p>
-                <p className="client-name-nv"><strong>— Happy Client, Kigali</strong></p>
+          <div className="testi-card-nv">
+            <FaQuoteLeft className="quote-icon-nv"/>
+            <p className="testi-text">"Aline didn't just build our website; she set up our hosting and managed our SEO. Our traffic has grown by 200% since we launched!"</p>
+            <div className="testi-author">
+              <div className="author-info">
+                <strong>Happy Client</strong>
+                <span>Tech Startup, Kigali</span>
+              </div>
             </div>
+          </div>
         </div>
 
-
-        <div className="cta-section-nv">
-            <h2>Ready to Transform Your Vision?</h2>
-            <p>Meet the visionary developer ready to bring your ideas to life.</p>
-            <Link to="/contact" className="cta-button-nv">
-                Let's Collaborate <FaArrowRight/>
-            </Link>
+        {/* Final CTA */}
+        <div className="services-cta-nv">
+          <h2>Ready to Launch Your Brand?</h2>
+          <p>Let’s talk about your project and see how my services can help you grow.</p>
+          <Link to="/contact" className="btn-main">
+            Start Your Project <FaArrowRight/>
+          </Link>
         </div>
-
       </div>
     </section>
   );

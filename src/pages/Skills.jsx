@@ -1,79 +1,112 @@
-import "../styles/Skills.css";
 import React from "react";
 import { Link } from "react-router-dom";
-// HANO NIHO IKIBAZO CYARI: Twongereyemo FaCheckCircle
-import { FaLaptopCode, FaTools, FaVideo, FaLightbulb, FaArrowRight, FaCogs, FaRocket, FaHandsHelping, FaCheckCircle } from "react-icons/fa";
+import { 
+  FaCheckCircle, FaLaptopCode, FaTools, FaVideo, FaLightbulb, 
+  FaArrowRight, FaCogs, FaRocket, FaChartBar, FaGlobe, FaServer, FaBullhorn 
+} from "react-icons/fa";
+import "../styles/Skills.css";
 
-const skillGroups = {
-  "Frontend Development": ["React", "TailwindCSS", "HTML5", "CSS3", "JavaScript (ES6+)", "Responsive Design", "UI Animations"],
-  "Backend Development": ["REST APIs", "Node.js", "Express", "PHP", "Form Handling", "API Workflows"],
-  "Programming Languages": ["Python", "Java", "C/C++", "C# (basic)"],
-  "Data Management": ["MongoDB (NoSQL)", "PostgreSQL", "MySQL", "Query Optimization"],
-  "Design & Multimedia": ["Photoshop", "Figma", "Graphic Design", "Typography", "Color Theory"],
-  "Videography & Content": ["Premiere Pro", "After Effects", "DaVinci Resolve", "Content Creation", "Social Media Mgt"],
-  "Tools & Platforms": ["VS Code", "Git", "GitHub", "Vercel", "Netlify", "Postman", "Chrome DevTools"],
-  "Office & Productivity": ["PowerPoint", "Excel", "Word", "Publisher", "Google Workspace"]
-};
+const skillGroups = [
+  {
+    title: "Frontend Development",
+    icon: <FaLaptopCode />,
+    items: ["React.js", "TailwindCSS", "JavaScript (ES6+)", "HTML5 & CSS3", "Responsive Design", "UI Animations"],
+    color: "blue"
+  },
+  {
+    title: "Digital Marketing",
+    icon: <FaBullhorn />,
+    items: ["SEO Optimization", "Meta Ads (FB/IG)", "Google Analytics", "Content Strategy", "Email Marketing", "SEM"],
+    color: "gold"
+  },
+  {
+    title: "Hosting & Domains",
+    icon: <FaServer />,
+    items: ["Web Hosting (Shared/VPS)", "Domain Name Setup", "SSL Certificates", "CPanel & FTP", "Cloud Deployment", "DNS Management"],
+    color: "green"
+  },
+  {
+    title: "Design & Multimedia",
+    icon: <FaVideo />,
+    items: ["Figma (UI/UX)", "Adobe Photoshop", "Premiere Pro", "After Effects", "Graphic Design", "Content Creation"],
+    color: "purple"
+  },
+  {
+    title: "Backend & Database",
+    icon: <FaCogs />,
+    items: ["Node.js", "Express", "REST APIs", "PostgreSQL", "MongoDB", "MySQL", "Firebase"],
+    color: "red"
+  },
+  {
+    title: "Technical Tools",
+    icon: <FaTools />,
+    items: ["Git & GitHub", "Docker", "Postman", "Vercel / Netlify", "VS Code", "Terminal / Bash"],
+    color: "teal"
+  }
+];
 
-export default function Skills(){
-    // Twakuyemo animation y'inyenyeri kuko NexVentures ikoresha background isukuye
-  
-    return (
-      <section className="skills-page-nv" id="skills">
-        <div className="container-nv">
-          
-          {/* === SECTION 1: Header === */}
-          <header className="skills-header-nv">
-              <p className="subtitle-nv">Technical & Creative Expertise</p>
-              <h1>My Core Skills & Competencies</h1>
-              <p className="description-nv">I leverage a diverse set of tools and technologies to create effective, modern, and user-centric solutions. Here’s a breakdown of my expertise.</p>
-          </header>
-  
-          {/* === SECTION 2: Skills Grid === */}
-          <div className="skills-grid-nv">
-            {Object.entries(skillGroups).map(([group, items])=>(
-              <div className="skill-card-nv" key={group}>
-                <h4>{group}</h4>
-                <ul>
-                  {/* Hano niho byari byakoreshejwe ariko bitari byashyizwemo hejuru */}
-                  {items.map(it=> <li key={it}><FaCheckCircle className="skill-check-icon-nv"/> {it}</li>)}
-                </ul>
+export default function Skills() {
+  return (
+    <section className="skills-page-nv">
+      <div className="skills-orb orb-left"></div>
+      <div className="skills-orb orb-right"></div>
+
+      <div className="container-nv">
+        <header className="skills-header-nv">
+          <span className="badge-nv">Expertise Stack</span>
+          <h1>My Core <span className="highlight">Skills</span> & Competencies</h1>
+          <p className="description-nv">
+            I leverage a diverse set of modern technologies to build, host, and market digital products that drive real-world impact and business growth.
+          </p>
+        </header>
+
+        <div className="skills-grid-nv">
+          {skillGroups.map((group, index) => (
+            <div className="skill-card-nv" key={index}>
+              <div className="card-top-nv">
+                <div className={`icon-box-nv ${group.color}`}>{group.icon}</div>
+                <h4>{group.title}</h4>
               </div>
-            ))}
-          </div>
-
-          {/* === SECTION 3: Our Philosophy (Why we do what we do) === */}
-          <div className="philosophy-nv">
-              <h2>Our Philosophy: Excellence by Design</h2>
-              <div className="philosophy-grid-nv">
-                  <div className="philosophy-item-nv">
-                      <FaCogs className="philosophy-icon-nv"/>
-                      <h3>Technical Proficiency</h3>
-                      <p>Mastering tools to ensure robust and scalable solutions.</p>
-                  </div>
-                  <div className="philosophy-item-nv">
-                      <FaLightbulb className="philosophy-icon-nv"/>
-                      <h3>Innovation First</h3>
-                      <p>Always seeking creative ways to solve complex problems.</p>
-                  </div>
-                  <div className="philosophy-item-nv">
-                      <FaRocket className="philosophy-icon-nv"/>
-                      <h3>Result Driven</h3>
-                      <p>Focusing on impact and measurable success for clients.</p>
-                  </div>
-              </div>
-          </div>
-  
-          {/* === SECTION 4: Ready to Transform Your Vision? (CTA) === */}
-          <div className="cta-section-nv">
-              <h2>Ready to Transform Your Vision?</h2>
-              <p>Meet the visionary developer ready to bring your ideas to life.</p>
-              <Link to="/contact" className="cta-button-nv">
-                  Let's Collaborate <FaArrowRight/>
-              </Link>
-          </div>
-  
+              <ul className="skill-list-nv">
+                {group.items.map((item, idx) => (
+                  <li key={idx}>
+                    <FaCheckCircle className="skill-check-icon-nv" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </section>
-    );
+
+        <div className="philosophy-nv">
+          <h2 className="sub-title">Excellence by Design</h2>
+          <div className="philosophy-grid-nv">
+            <div className="philosophy-item-nv">
+              <div className="phi-icon-box"><FaRocket /></div>
+              <h3>Fast & Scalable</h3>
+              <p>Optimized code and servers for maximum speed.</p>
+            </div>
+            <div className="philosophy-item-nv">
+              <div className="phi-icon-box"><FaChartBar /></div>
+              <h3>Data Driven</h3>
+              <p>Using marketing insights to drive real user growth.</p>
+            </div>
+            <div className="philosophy-item-nv">
+              <div className="phi-icon-box"><FaGlobe /></div>
+              <h3>Global Standard</h3>
+              <p>Building solutions that compete on a global scale.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="skills-cta-nv">
+          <h2>Ready to Launch Your Project?</h2>
+          <p>From Domain setup to the final Marketing campaign, I've got you covered.</p>
+          <Link to="/contact" className="btn-main">
+            Get Started Now <FaArrowRight />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
