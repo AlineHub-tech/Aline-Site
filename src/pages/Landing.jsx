@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaArrowRight, FaCode, FaRocket, FaTerminal } from "react-icons/fa";
-import profile from "../assets/profile.PNG"; 
+import profile from "../assets/profile.png"; 
 import "../styles/Landing.css";
 
 const SLOGANS = [
@@ -85,3 +85,4 @@ export default function Landing() {
     </section>
   );
 }
+
