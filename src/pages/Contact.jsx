@@ -65,12 +65,12 @@ export default function Contact() {
               <div className="social-connect-nv">
                 <p className="social-title">Connect With Me</p>
                 <div className="social-links-grid">
-                  <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub"><FaGithub /></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn"><FaLinkedin /></a>
-                  <a href="https://twitter.com" target="_blank" rel="noreferrer" title="Twitter"><FaTwitter /></a>
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook"><FaFacebook /></a>
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" title="Instagram"><FaInstagram /></a>
-                  <a href="https://dev.to" target="_blank" rel="noreferrer" title="Dev.to"><FaDev /></a>
+              <a href="https://github.com/AlineHub-tech" target="_blank" rel="noreferrer"><FaGithub/></a>
+              <a href="https://www.facebook.com/share/1CGmESiTA3/" target="_blank" rel="noreferrer"><FaFacebook/></a>
+              <a href="https://www.linkedin.com/in/umugwaneza-aline-655146325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer"><FaLinkedin/></a>
+              <a href="https://x.com/Umugwaneza3183?t=4A3A4C8KYpGQ-PlZEfOg1g&s=09" target="_blank" rel="noreferrer"><FaTwitter/></a>
+              <a href="https://www.instagram.com/a_li_ne97?igsh=dGs5MXVnbnpsbzIz" target="_blank" rel="noreferrer"><FaInstagram/></a>
+              <a href="https://dev.to/alinehubtech" target="_blank" rel="noreferrer"><FaDev/></a>
                 </div>
               </div>
             </div>
@@ -116,3 +116,4 @@ export default function Contact() {
     </section>
   );
 }
+
