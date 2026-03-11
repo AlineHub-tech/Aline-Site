@@ -1,89 +1,146 @@
-/* =================================================== */
-/* 1. Amabara Y'ibanze (Variables) na Fonts            */
-/* =================================================== */
-@import url('https://fonts.googleapis.com');
-
 :root {
-    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
-    --background-color-nv: #0e1a2a;  /* Umukara/ubururu wijimye cyane */
-    --text-color-nv: #ffffff;      /* Umweru rusange */
-    --accent-glow-nv: #007bff;       /* IBARA RYA ICON/SLOGAN */
+    --primary-nv: #3b82f6;          /* Blue modern */
+    --primary-dark: #2563eb;
+    --bg-dark: #0f172a;             /* Deep slate */
+    --bg-glass: rgba(15, 23, 42, 0.85); 
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-glow: #60a5fa;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* =================================================== */
-/* 2. Imiterere y'ikigobe Cyose (Layout & Structure)    */
-/* =================================================== */
 .nav-nv {
-  background-color: var(--background-color-nv);
-  color: var(--text-color-nv);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%; 
-  position: sticky; 
-  top: 0;
-  z-index: 1000; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-  font-family: 'Inter', sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 20px 0;
 }
 
-.brand-nv {
-  color: var(--text-color-nv); text-decoration: none; font-size: 1.5rem;
-  font-weight: 700; transition: color 0.3s;
-  display: flex; align-items: center; gap: 10px; 
+/* Iyo umuntu amanitse paji */
+.nav-nv.scrolled {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    padding: 12px 0;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.brand-nv:hover { color: var(--primary-nv); }
+
+.nav-container-nv {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+/* Brand Style */
+.brand-nv {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand-logo-bg {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
 
 .brand-icon-nv {
-    color: var(--accent-glow-nv); 
-    font-size: 1.8rem; 
+    color: var(--primary-nv);
+    font-size: 1.4rem;
 }
 
-/* =================================================== */
-/* 3. Navigation Links (Hagati)                        */
-/* =================================================== */
-.nav-center-nv { 
-    display: flex; 
-    gap: 25px; /* Gahunda nshya kugira ngo links zose zihwanye neza */
+.highlight { color: var(--primary-nv); }
+
+/* Navigation Links */
+.nav-menu-nv {
+    display: flex;
+    gap: 8px;
 }
 
-.nav-center-nv a {
-  color: var(--text-color-nv); text-decoration: none; font-weight: 400;
-  padding: 5px 0; position: relative; transition: color 0.3s;
-  display: flex; align-items: center; gap: 8px; 
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
 }
 
-.nav-icon-nv { color: var(--accent-glow-nv); font-size: 1rem; }
-.nav-center-nv a:hover { color: var(--primary-nv); }
-.nav-center-nv a.active { color: var(--primary-nv); font-weight: 600; }
-
-/* Akadirishya ko munsi ya link */
-.nav-center-nv a::after {
-    content: ''; position: absolute; width: 0; height: 2px; display: block;
-    margin-top: 5px; left: 0; background: var(--accent-glow-nv);
-    transition: width 0.3s ease; 
+.nav-icon-wrapper {
+    font-size: 1.1rem;
+    display: flex;
+    transition: var(--transition);
 }
 
-.nav-center-nv a:hover::after,
-.nav-center-nv a.active::after { width: 100%; background: var(--primary-nv); }
+.nav-link:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
 
-/* =================================================== */
-/* 4. Icyerekezo cy'Iburyo (Toggle Button Gusa)         */
-/* =================================================== */
-.nav-right-nv { display: flex; align-items: center; }
-.nav-toggle-nv { background: none; border: none; color: var(--text-color-nv); font-size: 1.5rem; cursor: pointer; display: none; }
+.nav-link.active {
+    color: var(--primary-nv);
+    background: rgba(59, 130, 246, 0.1);
+}
 
-/* =================================================== */
-/* 5. Responsive Styles (Mobile Menu)                  */
-/* =================================================== */
+.nav-link.active .nav-icon-wrapper {
+    transform: translateY(-2px);
+}
+
+/* Mobile Toggle */
+.nav-toggle-nv {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Responsive */
 @media (max-width: 992px) {
-  .nav-center-nv {
-    display: none; flex-direction: column; position: absolute; top: 65px; left: 0;
-    width: 100%; background-color: var(--background-color-nv);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); padding: 20px 5%; gap: 10px;
-  }
-  .nav-center-nv.open { display: flex; }
-  .nav-toggle-nv { display: block; } 
-  .nav-center-nv a { padding: 10px 0; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  .nav-center-nv a:last-child { border-bottom: none; }
+    .nav-toggle-nv { display: block; }
+
+    .nav-menu-nv {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .nav-menu-nv.open {
+        top: 0;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        width: 80%;
+        justify-content: center;
+        padding: 15px;
+    }
 }

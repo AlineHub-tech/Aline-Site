@@ -1,183 +1,241 @@
-/* =================================================== */
-/* 1. Kwinjiza Font n'Amabara Y'ibanze (Variables)      */
-/* =================================================== */
-@import url('https://fonts.googleapis.com');
-
 :root {
-    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
-    --text-color-nv: #ffffff;      /* Umweru rusange */
-    --background-color-nv: #0a0a0a;  /* Umukara wijimye */
-    --accent-glow-nv: #007bff;       /* IBARA RYA SLOGAN (Ubururu butoshye) */
-    --whatsapp-color: #25d366;      /* Icyatsi cya WhatsApp */
+    --primary-nv: #3b82f6;
+    --bg-dark: #0b1120;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Reset ya Global */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: var(--background-color-nv);
-}
-
-/* =================================================== */
-/* 2. Imiterere y'ikigobe Cyose (Layout & Structure)    */
-/* =================================================== */
-.landing-nexventures.full-page-layout {
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; /* Hagati kuri screen */
-  position: relative;
-  overflow: hidden; 
-  padding: 40px 20px; 
-  font-family: 'Inter', sans-serif; 
-  color: var(--text-color-nv);
-}
-
-.landing-inner-content {
-  display: flex;
-  flex-direction: column; /* Mobile default is column */
-  align-items: center;
-  justify-content: center; 
-  gap: 40px;
-  width: 100%;
-  max-width: 1200px; 
-  z-index: 10; 
-  margin: auto; 
-}
-
-/* Desktop Styles (>= 992px) */
-@media (min-width: 992px) {
-  .landing-inner-content {
-    flex-direction: row; /* Desktop is row */
-    text-align: left;
-  }
-  .left-side-nv { flex: 1; padding-right: 40px; }
-  .right-side-nv { flex: 0.8; display: flex; justify-content: flex-end; }
-  .social-buttons { justify-content: flex-start !important; } 
-  .main-slogan-buttons { flex-direction: column; align-items: flex-start; }
-}
-
-/* =================================================== */
-/* 3. Background Glow Effect                           */
-/* =================================================== */
-.blue-glow-bg {
-    position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(0, 77, 153, 0.3) 0%, rgba(10, 10, 10, 0) 60%);
-    border-radius: 50%; pointer-events: none; z-index: 1; opacity: 0.7;
-}
-
-/* =================================================== */
-/* 4. Ifoto mu ishusho y'Ikiziga (Hero Photo)          */
-/* =================================================== */
-.hero-photo-circle-nv {
-  width: 300px; height: 300px;
-  border-radius: 50%; 
-  object-fit: cover; 
-  box-shadow: 0 0 50px rgba(0, 77, 153, 0.5); 
-  display: block;
-  margin: 0 auto; 
-  border: 4px solid var(--primary-nv); 
-}
-
-/* =================================================== */
-/* 5. Amagambo (Text Content, H1, Description)          */
-/* =================================================== */
-.subtitle-nv { 
-    color: var(--primary-nv); font-size: 1rem; font-weight: 600; 
-    margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; 
-}
-
-/* H1 (Ubu isobanura icyo ukora muri rusange) */
-.left-side-nv h1 {
-  font-size: 2.5rem; 
-  margin-bottom: 20px;
-  color: white;
-  line-height: 1.2;
-  font-weight: 700; 
-}
-
-/* Description (Tagline) */
-.tagline-nv { 
-    font-size: 1rem; color: var(--text-color-nv); margin-top: 15px; 
-    line-height: 1.6; max-width: 500px;
-}
-.strong-description { font-weight: 600; color: #ffffff; }
-
-
-/* =================================================== */
-/* 6. Slogan Animation (Animated Text)                 */
-/* =================================================== */
-.slogan-container-nv { height: 3rem; margin-bottom: 20px; overflow: hidden; }
-
-.animated-slogan-text-nv {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--accent-glow-nv); /* Ibara ryiza kandi risomwa neza */
-  animation: fadeInOut 2.5s infinite forwards; 
-  display: inline-block;
-  margin-bottom:3%;
-  opacity: 0; 
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(20px); }
-    10% { opacity: 1; transform: translateY(0); }
-    90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-20px); }
-}
-
-/* =================================================== */
-/* 7. BUTO NKURU NSHYA (Slogan Buttons)                 */
-/* =================================================== */
-.main-slogan-buttons {
+.hero-section-nv {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    /* Modern Mesh Gradient Background */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
     display: flex;
-    flex-direction: column; 
-    gap: 15px;
-    margin-top: 20px;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden; /* Important: Fixes mobile horizontal scroll */
+    padding: 100px 5% 60px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    z-index: 10;
     width: 100%;
 }
 
-.slogan-btn {
-    padding: 12px 20px;
+/* Background Animated Orbs */
+.orb {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    opacity: 0.2;
+}
+.orb-1 { background: var(--primary-nv); top: -50px; right: -50px; }
+.orb-2 { background: #8b5cf6; bottom: -50px; left: -50px; }
+
+/* Left Content Styles */
+.badge-nv {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-nv);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-nv);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.name-gradient {
+    background: linear-gradient(90deg, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dynamic-slogan {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-family: 'Fira Code', monospace;
+}
+
+.typing-text {
+    color: var(--text-main);
+    border-right: 2px solid var(--primary-nv);
+    animation: blink 0.8s infinite;
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Hero Actions */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-main {
+    background: var(--primary-nv);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    background: #2563eb;
+}
+
+.social-group {
+    display: flex;
+    gap: 18px;
+}
+
+.social-link {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.social-link:hover { color: var(--text-main); transform: scale(1.2); }
+
+/* Right Content: Image Styling */
+.hero-content-right {
+    display: flex;
+    justify-content: center;
+}
+
+.image-stack {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+.main-hero-img {
+    width: 100%;
+    border-radius: 30px;
+    position: relative;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.image-border-decoration {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-nv);
+    border-radius: 30px;
+    z-index: 1;
+}
+
+/* Floating Elements */
+.floating-card {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
     font-size: 0.9rem;
-    width: fit-content; 
+    font-weight: 500;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.card-1 { top: 15%; left: -15%; animation: float 5s ease-in-out infinite; }
+.card-2 { bottom: 15%; right: -10%; animation: float 6s ease-in-out infinite 1s; }
 
-/* Socials CTA row (GitHub, LinkedIn, Portfolio) */
-.cta-row-nv { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; justify-content: center; }
 
-.btn-nv {
-  padding: 12px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; 
-  display: flex; align-items: center; gap: 8px; transition: transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { transform: scale(0.95); }
 }
-.btn-nv:hover { transform: translateY(-2px); }
 
-.primary-nv { background-color: var(--primary-nv); color: white; border: none; box-shadow: 0 5px 20px rgba(0, 77, 153, 0.4); }
-.primary-nv:hover { background-color: #0056b3; }
-.ghost-nv { background-color: transparent; color: var(--text-color-nv); border: 1px solid rgba(255, 255, 255, 0.3); }
-.ghost-nv:hover { background-color: rgba(255, 255, 255, 0.1); border-color: var(--text-color-nv); }
-
-
-/* =================================================== */
-/* 8. WhatsApp Float Button & Mobile Optimization      */
-/* =================================================== */
-.whatsapp-float-nv {
-    position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
-    background-color: var(--whatsapp-color); color: white; border-radius: 50px;
-    text-align: center; box-shadow: 2px 2px 3px #999; display: flex;
-    align-items: center; justify-content: center; z-index: 100;
-    transition: transform 0.3s ease;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
-.whatsapp-float-nv:hover { transform: scale(1.1); background-color: #128C7E; }
-.whatsapp-icon-nv { font-size: 30px; }
 
-@media (max-width: 768px) {
-    .left-side-nv h1 { font-size: 2rem; } 
-    .main-slogan-buttons { align-items: stretch; } /* Ziba ngari kuri mobile */
-    .slogan-btn { width: 100%; }
-    .whatsapp-float-nv { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-    .whatsapp-icon-nv { font-size: 25px; }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .hero-section-nv { padding-top: 120px; }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-description { margin: 0 auto 40px; }
+    
+    .dynamic-slogan { justify-content: center; }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-stack {
+        max-width: 300px;
+        margin: 40px auto 0;
+    }
+
+    /* .floating-card { display: none; } /* Kurinda akajagari kuri mobile */
+     */
+    .image-border-decoration { right: -10px; top: 10px; }
 }

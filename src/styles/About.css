@@ -1,127 +1,127 @@
-/* =================================================== */
-/* 1. Amabara Y'ibanze (Variables) na Fonts            */
-/* =================================================== */
-@import url('https://fonts.googleapis.com');
-
 :root {
-    --primary-nv: #004d99;          /* Ubururu bwa NexVentures */
-    --background-color-nv: #0e1a2a;  /* BG isukuye nk'iya NexVentures */
-    --text-color-nv: #ffffff;      
-    --card-bg-nv: #152233;           /* Background ya Card NSHYASHYA (Itandukanye na BG) */
-    --text-muted-nv: #a0a0a0;          
-    --accent-glow-nv: #007bff;      /* Ubururu bwo kumurika */
+    --primary-nv: #3b82f6;
+    --marketing-nv: #fbbf24;
+    --creative-nv: #a855f7;
+    --bg-dark: #0b1120;
+    --text-muted: #94a3b8;
 }
 
-/* =================================================== */
-/* 2. Imiterere Rusange Y'ikigobe                      */
-/* =================================================== */
 .about-page-nv {
-  background-color: var(--background-color-nv);
-  padding: 80px 5%; 
-  font-family: 'Inter', sans-serif;
-  color: var(--text-color-nv);
-  min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: #f8fafc;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-.container-nv { max-width: 1200px; margin: 0 auto; }
-h1, h2, h3, h4 { color: var(--text-color-nv); }
-p { color: var(--text-muted-nv); }
+.about-glow {
+    position: absolute;
+    top: 5%; left: 50%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
+    transform: translateX(-50%);
+    z-index: 0;
+}
 
-/* =================================================== */
-/* 3. Section Styles (Header, Vision, Expertise, etc)  */
-/* =================================================== */
-.about-header-nv { text-align: center; margin-bottom: 50px; }
-.subtitle-nv { color: var(--primary-nv); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
-.about-header-nv h1 { font-size: 3rem; margin: 10px 0; }
-.divider-nv { width: 60px; height: 3px; background-color: var(--accent-glow-nv); margin: 20px auto 0; }
+.container-nv { position: relative; z-index: 10; max-width: 1100px; margin: 0 auto; }
 
-/* --- Stats Showcase --- */
-.stats-showcase-nv {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
+/* Header Badge */
+.badge-nv {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-nv);
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Stats Grid */
+.stats-grid-nv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 60px 0 100px;
 }
 
 .stat-card-nv {
-    background-color: var(--card-bg-nv);
-    padding: 20px 30px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 77, 153, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 35px 20px;
+    border-radius: 24px;
+    text-align: center;
+    transition: 0.4s ease;
 }
-.stat-icon-nv { color: var(--accent-glow-nv); font-size: 1.5rem; }
-.stat-card-nv span { font-weight: 600; }
 
+.stat-card-nv:hover {
+    transform: translateY(-10px);
+    background: rgba(59, 130, 246, 0.05);
+    border-color: var(--primary-nv);
+}
 
-/* --- Built on Purpose Section --- */
-.purpose-section-nv { margin-bottom: 60px; }
-.purpose-section-nv h2, .drives-us-section-nv h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+.stat-icon-wrapper { font-size: 2.2rem; color: var(--primary-nv); margin-bottom: 15px; }
 
-.purpose-grid-nv { display: flex; gap: 30px; margin-bottom: 40px; }
+/* Grid Two Columns */
+.grid-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+}
 
-.card-purpose-nv {
-    background-color: var(--card-bg-nv);
+.purpose-card-nv {
+    background: rgba(15, 23, 42, 0.4);
     padding: 40px;
-    border-radius: 8px;
-    flex: 1;
+    border-radius: 30px;
+    border-left: 4px solid var(--primary-nv);
+}
+
+/* Expertise Section */
+.expertise-grid-nv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.expertise-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.marketing-icon { color: var(--marketing-nv); }
+.creative-icon { color: var(--creative-nv); }
+
+/* CEO Quote Section */
+.ceo-quote-nv {
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-top: 4px solid var(--primary-nv);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 80px 40px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
+    border-radius: 40px;
+    margin-bottom: 100px;
+    position: relative;
 }
-.card-purpose-nv:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(0, 77, 153, 0.4); }
-.purpose-icon-nv { font-size: 3rem; color: var(--accent-glow-nv); margin-bottom: 15px; }
 
-/* Expertise Grid inside Purpose */
-.expertise-container-nv h3 { margin-bottom: 20px; }
-.expertise-grid-nv { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.expertise-item-nv {
-    background-color: var(--background-color-nv); /* BG itandukanye na card ya purpose */
-    padding: 20px; border-radius: 5px; border: 1px solid rgba(0, 77, 153, 0.1);
-    transition: background-color 0.3s ease;
+.quote-icon { font-size: 3rem; color: var(--primary-nv); opacity: 0.2; margin-bottom: 20px; }
+.ceo-quote-nv p { font-size: 1.5rem; font-style: italic; line-height: 1.6; margin-bottom: 20px; }
+.quote-author { color: var(--primary-nv); font-weight: 700; font-size: 1.1rem; }
+
+/* Final CTA */
+.btn-main {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--primary-nv); color: white;
+    padding: 18px 40px; border-radius: 16px;
+    text-decoration: none; font-weight: 700;
+    transition: 0.3s;
 }
-.expertise-item-nv:hover { background-color: #1a2b3c; }
-.expertise-icon-nv { color: var(--primary-nv); font-size: 1.2rem; margin-right: 10px; }
-.expertise-item-nv h4 { display: inline; font-size: 1.1rem; }
-.expertise-item-nv p { font-size: 0.9rem; margin-top: 10px; }
 
+.btn-main:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
 
-/* --- What Drives Us Section --- */
-.drives-us-section-nv {
-    background-color: var(--card-bg-nv);
-    padding: 40px; border-radius: 8px; text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 60px;
-}
-.drives-content-nv { display: flex; align-items: center; justify-content: center; gap: 20px; }
-.drives-icon-nv { font-size: 2.5rem; color: var(--accent-glow-nv); }
-.drives-content-nv p { line-height: 1.6; max-width: 800px; }
-
-/* --- Ready to Transform Your Vision? (CTA Section) --- */
-.cta-section-nv {
-    text-align: center;
-    background: linear-gradient(90deg, var(--background-color-nv), #05101a);
-    padding: 50px 20px; border-radius: 8px; border: 1px solid var(--primary-nv);
-}
-.cta-section-nv h2 { font-size: 2rem; margin-bottom: 10px; }
-.cta-button-nv {
-    display: inline-flex; align-items: center; gap: 10px; margin-top: 20px;
-    padding: 12px 30px; background-color: var(--primary-nv); color: white;
-    text-decoration: none; border-radius: 4px; font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.cta-button-nv:hover { background-color: #0056b3; transform: translateY(-2px); }
-
-/* =================================================== */
-/* 4. Mobile Optimization                              */
-/* =================================================== */
-@media (max-width: 768px) {
-  .vision-mission-section-nv, .stats-showcase-nv { flex-direction: column; }
-  .drives-content-nv { flex-direction: column; }
-  .about-header-nv h1 { font-size: 2rem; }
-  .stat-card-nv { justify-content: center; }
+@media (max-width: 992px) {
+    .grid-two-cols { grid-template-columns: 1fr; }
+    .ceo-quote-nv p { font-size: 1.2rem; }
 }

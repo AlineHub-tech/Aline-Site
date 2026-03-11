@@ -1,98 +1,106 @@
-/* =================================================== */
-/* 1. Kwinjiza Font n'Amabara Y'ibanze (Variables)      */
-/* =================================================== */
-@import url('https://fonts.googleapis.com');
-
 :root {
-    --primary-nv: #004d99;          
-    --background-color-nv: #0e1a2a;  
-    --text-color-nv: #ffffff;      
-    --footer-bg: #1C2833;           /* Background Color Nshya */
-    --text-muted: #a0a0a0;          
-    --accent-glow-nv: #007bff;
+    --f-bg: #0b1120;
+    --f-text: #94a3b8;
+    --f-white: #f8fafc;
+    --f-primary: #3b82f6;
+    --f-border: rgba(255, 255, 255, 0.05);
 }
 
-/* =================================================== */
-/* 2. Imiterere ya Footer (Layout)                     */
-/* =================================================== */
 .site-footer-nv {
-  background-color: var(--footer-bg); /* New BG color applied */
-  color: var(--text-color-nv);
-  padding: 40px 5%;
-  font-family: 'Roboto', sans-serif; /* Font Family Nshya */
-  border-top: 3px solid var(--primary-nv); 
+    background-color: var(--f-bg);
+    padding: 80px 5% 30px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--f-border);
 }
 
-.footer-inner-nv {
-  display: flex; flex-wrap: wrap; justify-content: space-between;
-  gap: 30px; max-width: 1200px; margin: 0 auto;
+.footer-glow {
+    position: absolute;
+    bottom: -100px; left: 50%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08), transparent 70%);
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
-.footer-section-nv { flex: 1; min-width: 220px; }
-
-.footer-section-nv h3 {
-  color: var(--primary-nv); margin-bottom: 15px; font-size: 1.1rem;
-  border-left: 3px solid var(--accent-glow-nv); padding-left: 10px;
+.footer-container-nv {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
-/* ... (Description, Contact & Location Styles birakomeza uko byari biri) ... */
-
-/* Quick Links Styles (Icons integrated) */
-.footer-section-nv ul { list-style: none; padding: 0; }
-.footer-section-nv ul li a {
-  color: var(--text-muted); text-decoration: none; display: flex;
-  align-items: center; gap: 8px; padding: 5px 0; transition: color 0.3s;
-}
-.footer-section-nv ul li a:hover { color: var(--primary-nv); text-decoration: underline; }
-
-/* Socials Styles (Zimuriwe ahandi) */
-.socials-nv { display: flex; gap: 15px; margin-top: 20px; }
-.socials-nv a { color: var(--text-color-nv); font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
-.socials-nv a:hover { color: var(--primary-nv); transform: translateY(-3px); }
-
-/* =================================================== */
-/* 4. Newsletter Form Styles                           */
-/* =================================================== */
-.newsletter-form-nv { display: flex; margin-top: 10px; }
-.newsletter-form-nv input {
-    padding: 10px; border: none; border-radius: 4px 0 0 4px;
-    background-color: #334455; /* Background ihuye na footer nshya */
-    color: var(--text-color-nv); width: calc(100% - 50px); 
-}
-.newsletter-form-nv input:focus { outline: none; box-shadow: 0 0 0 2px var(--primary-nv); }
-.newsletter-form-nv button {
-    padding: 0 15px; border: none; border-radius: 0 4px 4px 0;
-    background-color: var(--primary-nv); color: white;
-    cursor: pointer; transition: background-color 0.3s;
-}
-.newsletter-form-nv button:hover { background-color: #0056b3; }
-
-
-/* =================================================== */
-/* 5. Copyright Section & Mobile Optimization          */
-/* =================================================== */
-.copyright-nv {
-  margin-top: 40px; padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center; font-size: 0.8rem;
-  color: var(--text-muted);
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 60px;
 }
 
-@media (max-width: 768px) {
-  .footer-inner-nv { flex-direction: column; }
-  .footer-section-nv { min-width: 100%; }
+/* Brand Section */
+.footer-logo { color: var(--f-white); font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; }
+.highlight { color: var(--f-primary); }
+.footer-bio { color: var(--f-text); line-height: 1.6; font-size: 0.95rem; margin-bottom: 25px; }
+
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a {
+    width: 38px; height: 38px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--f-border);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--f-text); transition: 0.3s; font-size: 1.1rem;
 }
-.developer-name {
-    font-weight: bold;
-    color: #ff380b; 
-    text-decoration: none;
-    transition: color 0.3s ease;
+.footer-socials a:hover { background: var(--f-primary); color: white; transform: translateY(-3px); }
+
+/* Links & Titles */
+.footer-top-grid h3 { color: var(--f-white); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; }
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { 
+    color: var(--f-text); text-decoration: none; transition: 0.3s; 
+    display: flex; align-items: center; gap: 8px; font-size: 0.95rem;
 }
-a{
-text-decoration: none;
+.link-icon { font-size: 0.7rem; opacity: 0.5; transition: 0.3s; }
+.footer-links a:hover { color: var(--f-primary); }
+.footer-links a:hover .link-icon { transform: translateX(5px); opacity: 1; }
+
+/* Contact Items */
+.f-contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; color: var(--f-text); font-size: 0.95rem; }
+.f-icon { color: var(--f-primary); font-size: 1rem; }
+
+/* Newsletter */
+.f-newsletter-form {
+    display: flex; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--f-border); border-radius: 12px;
+    padding: 5px; overflow: hidden;
+}
+.f-newsletter-form input {
+    flex: 1; background: none; border: none; padding: 10px 15px;
+    color: white; outline: none; font-size: 0.9rem;
+}
+.f-newsletter-form button {
+    background: var(--f-primary); color: white; border: none;
+    padding: 10px 15px; border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+.f-newsletter-form button:hover { background: #2563eb; }
+
+/* Bottom Bar */
+.footer-bottom {
+    padding-top: 30px; border-top: 1px solid var(--f-border);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--f-text); font-size: 0.85rem;
+}
+.footer-bottom-links { display: flex; gap: 20px; }
+.footer-bottom-links a { color: var(--f-text); text-decoration: none; transition: 0.3s; }
+.footer-bottom-links a:hover { color: var(--f-white); }
+
+@media (max-width: 992px) {
+    .footer-top-grid { grid-template-columns: 1fr 1fr; }
 }
 
-.developer-name:hover {
-    color:white;
-    text-decoration: underline;
+@media (max-width: 600px) {
+    .footer-top-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
 }
