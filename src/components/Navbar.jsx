@@ -1,53 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { 
   FaBars, FaTimes, FaCode, FaHome, FaCogs, FaFolderOpen, 
-  FaUserCircle, FaEnvelope, FaLightbulb // Added FaLightbulb icon
+  FaUserCircle, FaEnvelope, FaLightbulb 
 } from "react-icons/fa"; 
 import "../styles/Navbar.css";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Guhindura ibara rya nva igihe umuntu amanuka (scroll)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", path: "/", icon: <FaHome /> },
+    { name: "About", path: "/about", icon: <FaUserCircle /> },
+    { name: "Skills", path: "/skills", icon: <FaLightbulb /> },
+    { name: "Services", path: "/services", icon: <FaCogs /> },
+    { name: "Projects", path: "/projectpage", icon: <FaFolderOpen /> },
+    { name: "Contact", path: "/contact", icon: <FaEnvelope /> },
+  ];
+
   return (
-    <header className="nav-nv">
-      <div className="nav-left-nv">
+    <header className={`nav-nv ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-container-nv">
         <Link to="/" className="brand-nv">
-          <FaCode className="brand-icon-nv" /> 
-          Umugwaneza Aline
+          <div className="brand-logo-bg">
+            <FaCode className="brand-icon-nv" />
+          </div>
+          <span className="brand-text">Umugwaneza <span className="highlight">Aline</span></span>
         </Link>
-      </div>
 
-      <nav className={`nav-center-nv ${open ? "open" : ""}`}>
-        {/* Linki nshya zifite icons */}
-        <NavLink to="/" onClick={() => setOpen(false)}>
-            <FaHome className="nav-icon-nv"/> Home
-        </NavLink>
-        <NavLink to="/about" onClick={() => setOpen(false)}>
-            <FaUserCircle className="nav-icon-nv"/> About
-        </NavLink>
-        <NavLink to="/services" onClick={() => setOpen(false)}>
-            <FaCogs className="nav-icon-nv"/> Services
-        </NavLink>
-        <NavLink to="/projectpage" onClick={() => setOpen(false)}>
-            <FaFolderOpen className="nav-icon-nv"/> Projects
-        </NavLink>
-        
-        {/* Link Nshya ya Skills */}
-        <NavLink to="/skills" onClick={() => setOpen(false)}>
-            <FaLightbulb className="nav-icon-nv"/> Skills
-        </NavLink>
-        
-        <NavLink to="/contact" onClick={() => setOpen(false)}>
-            <FaEnvelope className="nav-icon-nv"/> Contact
-        </NavLink>
-      </nav>
+        {/* Desktop Menu */}
+        <nav className={`nav-menu-nv ${open ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <NavLink 
+              key={link.path} 
+              to={link.path} 
+              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              onClick={() => setOpen(false)}
+            >
+              <span className="nav-icon-wrapper">{link.icon}</span>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
 
-      <div className="nav-right-nv">
-        {/* Link za LinkedIn na GitHub zavanyweho */}
-        
-        <button className="nav-toggle-nv" onClick={() => setOpen(!open)} aria-label="menu">
-          {open ? <FaTimes /> : <FaBars />}
-        </button>
+        <div className="nav-actions-nv">
+          <button 
+            className={`nav-toggle-nv ${open ? "is-active" : ""}`} 
+            onClick={() => setOpen(!open)} 
+            aria-label="Toggle menu"
+          >
+            {open ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
     </header>
   );
