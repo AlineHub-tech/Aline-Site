@@ -1,105 +1,77 @@
-import React from "react";
-import { 
-  FaUserTie, FaRocket, FaHandsHelping, FaLaptopCode, FaTools, 
-  FaVideo, FaArrowRight, FaStar, FaCodeBranch, FaCheckCircle, 
-  FaChartLine, FaGlobe, FaCogs, FaQuoteLeft 
-} from "react-icons/fa"; 
-import { Link } from "react-router-dom";
-import "../styles/About.css";
+import React from 'react';
+import '../styles/About.css';
+import profileImg from '../assets/profile.png';
 
 export default function About() {
-  const expertStats = [
-    { icon: <FaUserTie />, label: "Founder, ByteFlow Ltd" },
-    { icon: <FaCodeBranch />, label: "Full-Stack Specialist" },
-    { icon: <FaChartLine />, label: "Digital Strategist" },
-    { icon: <FaGlobe />, label: "Web Hosting Expert" },
-  ];
-
   return (
-    <section className="about-page-nv">
-      <div className="about-glow"></div>
-
-      <div className="container-nv">
-        {/* Header Section */}
-        <header className="about-header-nv">
-          <span className="badge-nv">Executive Profile</span>
-          <h1 className="section-title">Umugwaneza <span className="highlight">Aline</span></h1>
-          <p className="header-desc">
-            Founder of <strong>ByteFlow Ltd</strong>. A multidisciplinary technologist dedicated to building 
-            high-impact digital ecosystems through code, strategy, and creative media.
-          </p>
-        </header>
-
-        {/* Professional Stats */}
-        <div className="stats-grid-nv">
-          {expertStats.map((stat, index) => (
-            <div className="stat-card-nv" key={index}>
-              <div className="stat-icon-wrapper">{stat.icon}</div>
-              <span className="stat-label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
+    <div className="ele-about-viewport">
+      <div className="ele-about-container">
         
-        {/* Personal Story & ByteFlow Ltd */}
-        <div className="grid-two-cols">
-          <div className="purpose-card-nv">
-            <div className="p-icon-bg"><FaStar /></div>
-            <h3>Who I Am</h3>
-            <p>I am a <strong>Full-Stack Developer</strong> and <strong>Creative Director</strong> with a mission 
-            to redefine the digital landscape in Rwanda and beyond. My expertise spans across technical 
-            development and market psychology.</p>
-          </div>
-          <div className="purpose-card-nv">
-            <div className="p-icon-bg"><FaRocket /></div>
-            <h3>The ByteFlow Vision</h3>
-            <p>As the <strong>Founder of ByteFlow Ltd</strong>, I lead a vision to provide 360° solutions: 
-            from <strong>Domain Names</strong> and <strong>Web Hosting</strong> to <strong>SEO</strong>, 
-            <strong>Photography</strong>, and <strong>Videography</strong>.</p>
-          </div>
+        {/* Editorial Page Title */}
+        <div className="ele-about-header">
+          <span className="ele-about-num">02 // PROFILE MATRIX</span>
+          <h2 className="ele-about-title">About Me</h2>
         </div>
 
-        {/* Core Competencies (Expertise) */}
-        <div className="expertise-section-nv">
-          <h2 className="sub-title">Core Competencies</h2>
-          <div className="expertise-grid-nv">
-            <div className="expertise-card">
-              <FaLaptopCode className="exp-icon" />
-              <h4>Development & Infrastructure</h4>
-              <p>Full-Stack Web Apps, Secure Web Hosting, Domain Management, and SSL Implementation.</p>
+        {/* Responsive Layout Grid */}
+        <div className="ele-about-split-layout">
+          
+          {/* Left Visual Column */}
+          <div className="ele-about-left-side">
+            <div className="ele-about-image-wrapper">
+              <img src={profileImg} alt="Umugwaneza Aline" className="ele-about-profile-img" />
             </div>
-            <div className="expertise-card">
-              <FaChartLine className="exp-icon marketing-icon" />
-              <h4>Growth & Strategy</h4>
-              <p>Advanced SEO, Digital Marketing campaigns, Meta Ads, and Data Analytics for ROI.</p>
-            </div>
-            <div className="expertise-card">
-              <FaVideo className="exp-icon creative-icon" />
-              <h4>Creative Production</h4>
-              <p>Professional Videography, Photography, and High-End Video Editing for modern brands.</p>
+            <div className="ele-about-faith-card">
+              <span className="ele-about-faith-label">FOUNDATIONAL CONVICTION</span>
+              <p className="ele-about-faith-quote">“Jesus is my forever.”</p>
             </div>
           </div>
+
+          {/* Right Text Column */}
+          <div className="ele-about-right-side">
+            <p className="ele-about-essay-lead">
+              I’m Umugwaneza Aline — a Full-Stack Developer, Graphic Designer, Photographer, and Founder from Kigali, Rwanda [Kigali, Batsinda KG 24 AVE].
+            </p>
+            
+            <p className="ele-about-essay-body">
+              I’m a young creator and builder who found a way to bring technology and creativity into the same story. I enjoy building digital products, designing visual experiences, capturing stories through photography, and turning ideas into things people can actually see and use.
+            </p>
+            
+            <p className="ele-about-essay-body">
+              But this journey did not start with a company, a title, or a clear roadmap. It started with learning.
+            </p>
+
+            <div className="ele-about-sub-chapter">
+              <h3>From Developer to Builder</h3>
+              <p className="ele-about-essay-body">
+                As I continued learning, I started creating projects of my own. I explored web development, UI/UX, backend systems, databases, APIs, and deployment. I built projects, redesigned ideas, tested concepts, made mistakes, started again, and kept improving.
+              </p>
+              <p className="ele-about-essay-body">
+                Some projects became experiments. Some became portfolio pieces. And some became the beginning of bigger ideas. This is where my journey started changing from <em>learning technology</em> to <em>using technology to create.</em>
+              </p>
+            </div>
+
+            <div className="ele-about-sub-chapter">
+              <h3>Becoming a Founder</h3>
+              <p className="ele-about-essay-body">
+                Today, I’m not only interested in building for myself. I’m building things that can become something bigger. 
+              </p>
+              <p className="ele-about-essay-body">
+                I’m the Founder & Builder of <strong>ByteFlow Ltd</strong>, a technology company focused on building digital solutions and helping ideas move from concept to reality. I’m also the Founder of <strong>A Better Tomorrow Foundation</strong>, an initiative built around the belief that we can contribute to a better future by restoring hope and creating opportunities. And through <strong>Chapters Studio</strong>, I continue exploring my creative side as a Founder & Creative — using photography and visual storytelling to capture moments, people, and stories.
+              </p>
+            </div>
+
+            <div className="ele-about-sub-chapter">
+              <h3>Where I Am Now</h3>
+              <p className="ele-about-essay-body">
+                I’m still learning. Still building. Still experimenting. Still discovering what I’m capable of. I don’t see my journey as a finished success story. I see it as a documentary that is still being written. From finishing school in 2024 to stepping into entrepreneurship — every chapter has shaped the person I am becoming. And this is only the beginning.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        {/* CEO Quote / Philosophy */}
-        <div className="ceo-quote-nv">
-          <FaQuoteLeft className="quote-icon" />
-          <p>
-            "At the heart of every great project is a perfect balance between technical 
-            excellence and creative storytelling. I founded <strong>ByteFlow Ltd</strong> to be 
-            the home of that balance."
-          </p>
-          <span className="quote-author">— Umugwaneza Aline</span>
-        </div>
-
-        {/* Final CTA */}
-        <div className="about-cta-nv">
-          <h2>Ready to Launch Your Vision?</h2>
-          <p>Let's collaborate on your next big project and scale your brand together.</p>
-          <Link to="/contact" className="btn-main">
-            Let's Talk Business <FaArrowRight />
-          </Link>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,88 +1,87 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaWhatsapp, FaArrowRight, FaCode, FaRocket, FaTerminal } from "react-icons/fa";
-import profile from "../assets/profile.png"; 
-import "../styles/Landing.css";
-
-const SLOGANS = [
-  "Frontend Developer", "UI/UX Enthusiast", "React Specialist", "Creative Coder"
-];
-const WHATSAPP_NUMBER = "250796023452"; 
+import React from 'react';
+import { FaTerminal, FaCamera, FaGlobe, FaGithub } from 'react-icons/fa6';
+import { SiFigma } from 'react-icons/si';
+import '../styles/Landing.css';
+import profileImg from '../assets/profile.png';
 
 export default function Landing() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % SLOGANS.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="hero-section-nv">
-      {/* Background Glows */}
-      <div className="orb orb-1"></div>
-      <div className="orb orb-2"></div>
-
-      <div className="hero-container">
-        {/* Left Side: Text Content */}
-        <div className="hero-content-left">
-          <div className="badge-nv">
-            <span className="pulse-dot"></span>
-            Available for new projects
-          </div>
+    <div className="ele-landing-viewport">
+      {/* BACKGROUND PORTRAIT HERO SYSTEM WITH TOP-ALIGNED CANVAS */}
+      <div 
+        className="ele-hero-backdrop-wrapper" 
+        style={{ backgroundImage: `linear-gradient(to bottom, rgba(11, 11, 11, 0.15), rgba(11, 11, 11, 0.98)), url(${profileImg})` }}
+      >
+        <div className="ele-hero-master-container">
           
-          <h1 className="hero-title">
-            Hi, I'm <span className="name-gradient">Aline Umugwaneza</span>
-          </h1>
-
-          <div className="dynamic-slogan">
-            <FaTerminal className="term-icon" />
-            <span className="typing-text">{SLOGANS[index]}</span>
+          {/* Top Metastamp Row Entry */}
+          <div className="ele-top-badge-strip">
+            <span className="ele-badge-dot"></span>
+            <span className="ele-badge-txt">LEAD DEVELOPER · IDENTITY MAP ARCHIVE</span>
           </div>
 
-          <p className="hero-description">
-            I craft high-performance, visually stunning web experiences. 
-            Bridging the gap between <strong>clean code</strong> and <strong>modern design</strong>.
-          </p>
+          {/* Central Creative Layout System */}
+          <div className="ele-hero-middle-layout">
+            <div className="ele-hero-text-block">
+              
+              {/* Circular Avatar Badging Layer */}
+              <div className="ele-circle-badge-avatar" style={{ backgroundImage: `url(${profileImg})` }}></div>
+              
+              <h1 className="ele-monumental-header">UMUGWANEZA ALINE</h1>
+              <p className="ele-featured-collaborators">Full-Stack Developer · Graphic Designer · Photographer</p>
+              
+              <div className="ele-ep-pill-container">
+                <span className="ele-pill-dot"></span>
+                <span className="ele-pill-text">CURRENT FOCUS: <strong>CREATIVE TECHNOLOGY</strong> →</span>
+              </div>
 
-          <div className="hero-actions">
-            <Link to="/projectpage" className="btn-main">
-              Explore My Work <FaArrowRight />
-            </Link>
-            <div className="social-group">
-              <a href="https://github.com" className="social-link" target="_blank" rel="noreferrer"><FaGithub /></a>
-              <a href="https://linkedin.com" className="social-link" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+              <p className="ele-editorial-summary-para">
+                I build digital experiences and creative work while exploring ideas that can become meaningful products, businesses, and initiatives. Out now across all digital networks.
+              </p>
+
+              {/* Streaming Platform Styled Pills (Real Icons Integration) */}
+              <div className="ele-streaming-pills-grid">
+                <a href="https://vercel.app" target="_blank" rel="noreferrer" className="ele-stream-pill">
+                  <FaTerminal className="ele-pill-real-icon" /> <span>ByteFlow Ltd</span>
+                </a>
+                <a href="https://vercel.app" target="_blank" rel="noreferrer" className="ele-stream-pill">
+                  <FaGlobe className="ele-pill-real-icon" /> <span>Foundation</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="ele-stream-pill">
+                  <FaCamera className="ele-pill-real-icon" /> <span>Chapters Studio</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noreferrer" className="ele-stream-pill">
+                  <FaGithub className="ele-pill-real-icon" /> <span>GitHub Archive</span>
+                </a>
+              </div>
             </div>
+
+            {/* Premium Glassmorphic Card Dedicated to ByteFlow Operations */}
+            <div className="ele-floating-tour-card">
+              <div className="ele-tour-card-inner">
+                <div className="ele-tour-thumb" style={{ backgroundImage: `url(${profileImg})` }}></div>
+                <div className="ele-tour-details">
+                  <span className="ele-tour-tag">· VENTURE HUB</span>
+                  <h3>ByteFlow Digital Launch 2026</h3>
+                  <a href="https://vercel.app" target="_blank" rel="noreferrer" className="ele-tour-ticket-btn">LAUNCH SITE →</a>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
-        {/* Right Side: Image with Decorations */}
-        <div className="hero-content-right">
-          <div className="image-stack">
-            <div className="image-border-decoration"></div>
-            <img src={profile} alt="Aline Umugwaneza" className="main-hero-img" />
-            
-            {/* Floating Stats - Hidden on Mobile for clean look */}
-            <div className="floating-card card-1">
-              <FaCode className="card-icon" />
-              <span>Clean Code</span>
-            </div>
-            <div className="floating-card card-2">
-              <FaRocket className="card-icon" />
-              <span>Fast Delivery</span>
-            </div>
+        {/* Dynamic Horizontal Footer Status Tracker */}
+        <div className="ele-hero-bottom-ticker-bar">
+          <div className="ele-ticker-left">
+            <span className="ele-green-live-dot"></span>
+            <span>Ecosystem Node : Systems Fully Operational</span>
           </div>
+          <div className="ele-ticker-right">BATSINDA, KIGALI</div>
         </div>
+
       </div>
-
-      {/* Floating WhatsApp Button
-      <a href={`https://wa.me{WHATSAPP_NUMBER}`} className="whatsapp-float" target="_blank" rel="noreferrer">
-        <FaWhatsapp />
-        <span className="wa-tooltip">Let's Chat!</span>
-      </a> */}
-    </section>
+    </div>
   );
 }
-

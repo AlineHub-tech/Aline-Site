@@ -1,119 +1,76 @@
-import React, { useState } from "react";
-import { 
-  FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, 
-  FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaTwitter, FaDev 
-} from "react-icons/fa";
-import "../styles/Contact.css";
+import React from 'react';
+import { FaGithub, FaLinkedin, FaInstagram, FaDev, FaXTwitter } from 'react-icons/fa6';
+import '../styles/Contact.css';
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setName(""); setEmail(""); setMessage("");
-    }, 3000);
-  };
-
   return (
-    <section className="contact-page-nv">
-      <div className="contact-glow"></div>
-      
-      <div className="container-nv">
-        <header className="contact-header-nv">
-          <span className="badge-nv">Get In Touch</span>
-          <h1>Let’s Build Something <span className="highlight">Exceptional</span></h1>
-          <p className="header-desc">Reach out for collaborations, inquiries, or just to say hi!</p>
-        </header>
+    <div className="ele-contact-viewport">
+      <div className="ele-contact-container">
+        
+        <div className="ele-contact-header">
+          <span className="ele-contact-num">05 // CHANNEL SEPARATION</span>
+          <h2 className="ele-contact-title">Leave a note.</h2>
+        </div>
 
-        <div className="contact-grid-nv">
-          {/* Left Side: Contact Info & Socials */}
-          <div className="contact-info-nv">
-            <div className="info-card-nv">
-              <h3>Office Information</h3>
-              
-              <div className="info-item-nv">
-                <div className="icon-box-nv"><FaMapMarkerAlt /></div>
-                <div>
-                  <p className="label">Location</p>
-                  <p className="value">Batsinda, KG 24 AVE, Kigali</p>
-                </div>
+        <div className="ele-contact-split-grid">
+          
+          <div className="ele-contact-left-block">
+            <p className="ele-contact-editorial-prompt">
+              Whether deploying high-performance applications via <strong>ByteFlow Ltd</strong>, aligning photography directions with <strong>Chapters Studio</strong>, or coordinating social restoration systems—let's build something real.
+            </p>
+            
+            <div className="ele-direct-matrix-channels">
+              <div className="ele-channel-line-row">
+                <span>Secure Email</span>
+                <a href="mailto:umugwanezaaline77@gmail.com">umugwanezaaline77@gmail.com</a>
               </div>
-
-              <div className="info-item-nv">
-                <div className="icon-box-nv"><FaPhoneAlt /></div>
-                <div>
-                  <p className="label">Call/WhatsApp</p>
-                  <p className="value">+250 796 023 452</p>
-                </div>
+              <div className="ele-channel-line-row">
+                <span>Direct Signal / WhatsApp</span>
+                <a href="https://wa.me" target="_blank" rel="noreferrer">+250 796 023 452</a>
               </div>
-
-              <div className="info-item-nv">
-                <div className="icon-box-nv"><FaEnvelope /></div>
-                <div>
-                  <p className="label">Email Address</p>
-                  <p className="value">umugwanezaaline77@gmail.com</p>
-                </div>
-              </div>
-
-              {/* Social Media Icons */}
-              <div className="social-connect-nv">
-                <p className="social-title">Connect With Me</p>
-                <div className="social-links-grid">
-              <a href="https://github.com/AlineHub-tech" target="_blank" rel="noreferrer"><FaGithub/></a>
-              <a href="https://www.facebook.com/share/1CGmESiTA3/" target="_blank" rel="noreferrer"><FaFacebook/></a>
-              <a href="https://www.linkedin.com/in/umugwaneza-aline-655146325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer"><FaLinkedin/></a>
-              <a href="https://x.com/Umugwaneza3183?t=4A3A4C8KYpGQ-PlZEfOg1g&s=09" target="_blank" rel="noreferrer"><FaTwitter/></a>
-              <a href="https://www.instagram.com/a_li_ne97?igsh=dGs5MXVnbnpsbzIz" target="_blank" rel="noreferrer"><FaInstagram/></a>
-              <a href="https://dev.to/alinehubtech" target="_blank" rel="noreferrer"><FaDev/></a>
-                </div>
+              <div className="ele-channel-line-row">
+                <span>HQ Coordinates</span>
+                <span className="ele-static-value-txt">Kigali, Batsinda KG 24 AVE</span>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Contact Form */}
-          <div className="contact-form-wrapper-nv">
-            <div className="form-card-nv">
-                <h3>Send a Message</h3>
-                <form className="modern-form-nv" onSubmit={handleSubmit}>
-                    <div className="form-group-nv">
-                        <input type="text" placeholder="Full Name" value={name} onChange={(e)=>setName(e.target.value)} required />
-                    </div>
-                    <div className="form-group-nv">
-                        <input type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} required />
-                    </div>
-                    <div className="form-group-nv">
-                        <textarea placeholder="How can I help you?" rows="5" value={message} onChange={(e)=>setMessage(e.target.value)} required></textarea>
-                    </div>
-                    <button className={`submit-btn-nv ${sent ? 'sent' : ''}`} type="submit">
-                        {sent ? "Message Sent ✓" : "Send Message"} <FaPaperPlane />
-                    </button>
-                </form>
+          <div className="ele-contact-right-block">
+            <div className="ele-terminal-network-card">
+              <h4>VERIFIED VECTOR CONNECTIONS</h4>
+              <ul className="ele-terminal-links-list">
+                <li>
+                  <FaGithub className="ele-terminal-link-icon" />
+                  <span>GitHub:</span>
+                  <a href="https://github.com" target="_blank" rel="noreferrer">@AlineHub-tech</a>
+                </li>
+                <li>
+                  <FaLinkedin className="ele-terminal-link-icon" />
+                  <span>LinkedIn:</span>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer">Umugwaneza Aline</a>
+                </li>
+                <li>
+                  <FaDev className="ele-terminal-link-icon" />
+                  <span>DEV Community:</span>
+                  <a href="https://dev.to" target="_blank" rel="noreferrer">@alinehubtech</a>
+                </li>
+                <li>
+                  <FaXTwitter className="ele-terminal-link-icon" />
+                  <span>X / Twitter:</span>
+                  <a href="https://x.com" target="_blank" rel="noreferrer">@Umugwaneza3183</a>
+                </li>
+                <li>
+                  <FaInstagram className="ele-terminal-link-icon" />
+                  <span>Instagram:</span>
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer">@a_li_ne97</a>
+                </li>
+              </ul>
             </div>
           </div>
+
         </div>
 
-        {/* Map Section */}
-        <div className="map-section-nv">
-          <div className="map-header">
-            <h2>Visit My <span className="highlight">Workspace</span></h2>
-            <p>KG 24 AVE, Batsinda, Kigali, Rwanda</p>
-          </div>
-          <div className="map-container-nv">
-            <iframe 
-              title="Aline's Office Location"
-              src="https://google.com" 
-              width="100%" height="450" style={{ border: 0, borderRadius: "24px" }} allowFullScreen="" loading="lazy"
-            ></iframe>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }
-

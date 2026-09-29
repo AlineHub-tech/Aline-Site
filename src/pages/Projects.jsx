@@ -1,84 +1,130 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { loadProjects, saveProjects } from "../utils/localStore";
-import { SAMPLE_PROJECTS } from "../data/sampleProjects";
-import AddProjectModal from "../components/AddProjectModal";
-import "../styles/Project.css";
+import React from 'react';
+import { FaGithub } from 'react-icons/fa6';
+import '../styles/Projects.css';
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [filterTech, setFilterTech] = useState("");
-
-  useEffect(() => {
-    const local = loadProjects();
-    if (!local) {
-      saveProjects(SAMPLE_PROJECTS);
-      setProjects(SAMPLE_PROJECTS);
-    } else setProjects(local);
-  }, []);
-
-  function handleSave(p) {
-    const next = [p, ...projects.filter(x => x.id !== p.id)];
-    setProjects(next);
-    saveProjects(next);
-  }
-
-  function handleDelete(id){
-    if(!confirm("Delete project?")) return;
-    const next = projects.filter(p=>p.id!==id);
-    setProjects(next);
-    saveProjects(next);
-  }
-
-  const filtered = projects.filter(p => {
-    const q = query.trim().toLowerCase();
-    if (q && !(p.title.toLowerCase().includes(q) || (p.description||"").toLowerCase().includes(q))) return false;
-    if (filterTech && !(p.tech||"").toLowerCase().includes(filterTech.toLowerCase())) return false;
-    return true;
-  });
-
-  const allTechs = Array.from(new Set(projects.flatMap(p => (p.tech || "").split(",").map(t=>t.trim()).filter(Boolean))));
+  const projectList = [
+    {
+      id: '01',
+      name: 'BYTEFLOW LTD',
+      role: 'FOUNDER & BUILDER',
+      tech: 'Full-Stack Software Architecture',
+      desc: 'My technology and digital solutions company. Engineering custom full-stack web platforms, visual brand architectures, advanced business logic systems, cloud web hosting configurations, and enterprise domain solutions.',
+      link: 'https://vercel.app',
+      meta: 'WhatsApp: +250 796 023 452 | Email: byteflowltd9@gmail.com'
+    },
+    {
+      id: '02',
+      name: 'A BETTER TOMORROW FOUNDATION',
+      role: 'FOUNDER',
+      tech: 'Social Impact Infrastructure',
+      desc: 'A dedicated social impact initiative structured to support street children and highly vulnerable families across Rwanda. Rebuilding hope and securing concrete opportunities through practical skill incubation and structured mentorship.',
+      link: 'https://vercel.app',
+      meta: 'Contact: +250 796 023 452 | Email: abettertomorrowf@gmail.com'
+    },
+    {
+      id: '03',
+      name: 'CHAPTERS STUDIO',
+      role: 'FOUNDER & CREATIVE',
+      tech: 'Visual Storytelling Medium',
+      desc: 'My photography and creative direction studio engineered to capture moments and document history. Specializing in high-end wedding journals, birthdays, graduation frames, pristine outdoor portraits, and editorial layout compositions.',
+      link: null,
+      meta: 'Instagram: Chapters__Studios | Email: chaptersstudio1@gmail.com | Phone: +250 726 113 930'
+    },
+    {
+      id: '04',
+      name: 'LIFEOS',
+      role: 'CONCEPT SYSTEM',
+      tech: 'MERN Stack (MongoDB, Express, React, Node.js)',
+      desc: 'An advanced, conceptual personal coach assistant dashboard built to manage daily routines, track financial accountability, monitor discipline curves, and generate automated performance data insights.',
+      link: null,
+      meta: 'Source Code Secured via Private Repository'
+    },
+    {
+      id: '05',
+      name: 'NEXUS NEWS NETWORK',
+      role: 'DEPLOYED PLATFORM',
+      tech: 'React, Node.js, MongoDB, Vercel, Render',
+      desc: 'A full-scale media network built with secure administrative control mechanisms, publishing approval pipelines, secure content categories, and native Kinyarwanda language content matrices.',
+      link: null,
+      meta: 'Database Clusters Managed via MongoDB Atlas'
+    },
+    {
+      id: '06',
+      name: 'KIGALI BITES',
+      role: 'CURRENTLY BUILDING',
+      tech: 'Figma UI/UX & React Engineering',
+      desc: 'A modern food discovery storefront platform mapping culinary operations, business listings, and product distribution flows to streamline ordering and food delivery around Kigali.',
+      link: null,
+      meta: 'Active Prototyping & Layout Blueprint Complete'
+    },
+    {
+      id: '07',
+      name: 'BUY & GET E-COMMERCE',
+      role: 'PRODUCTION BASE',
+      tech: 'JavaScript Core, CSS3 Interface Layout',
+      desc: 'An e-commerce shopping framework optimized for slick product item matrices, dynamic cart status mutations, and elegant client checkout parameters.',
+      link: null,
+      meta: 'Secured via Vanilla State Implementation'
+    },
+    {
+      id: '08',
+      name: 'IMENA MOVES KIDZ',
+      role: 'LIVE BUILD',
+      tech: 'Web Engineering & Creative Strategy',
+      desc: 'A dedicated web presence architecture developed to organize, deploy, and scale interactive arts programs and active performance educational tools for kids.',
+      link: 'https://vercel.app',
+      meta: 'Production Build Deployed via Vercel Pipelines'
+    }
+  ];
 
   return (
-    <section className="projects section" id="projects">
-      <div className="container">
-        <div className="projects-header">
-          <h2>Projects</h2>
-          <div className="projects-actions">
-            <input placeholder="Search projects..." value={query} onChange={(e)=>setQuery(e.target.value)} />
-            <select value={filterTech} onChange={e=>setFilterTech(e.target.value)}>
-              <option value="">All tech</option>
-              {allTechs.map((t, i)=> <option key={i} value={t}>{t}</option>)}
-            </select>
-            <button className="btn" onClick={()=>setOpen(true)}>+ Add</button>
-            <button className="btn ghost" onClick={()=>{ if(confirm('Clear all?')){ saveProjects([]); setProjects([]); } }}>Clear All</button>
+    <div className="ele-projects-viewport">
+      <div className="ele-projects-container">
+        
+        <div className="ele-projects-header">
+          <div className="ele-header-left">
+            <span className="ele-projects-num">04 // PRODUCTION CHRONOLOGY</span>
+            <h2 className="ele-projects-title">Ventures & Projects</h2>
+          </div>
+          
+          <div className="ele-projects-gh-hero-card">
+            <div className="ele-gh-card-header">
+              <FaGithub className="ele-gh-icon" />
+              <span>@AlineHub-tech</span>
+            </div>
+            <p>“See what I build. See how I learn. See how I experiment.”</p>
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="ele-gh-link-btn">Access Master GitHub ↗</a>
           </div>
         </div>
 
-        <div className="projects-grid">
-          {filtered.length===0 && <div className="empty">No projects yet.</div>}
-          {filtered.map((p) => (
-            <article className="project-card" key={p.id}>
-              <h3>{p.title}</h3>
-              <p className="meta">{p.tech}</p>
-              <p className="desc">{p.description}</p>
-              <div className="card-row">
-                <Link to={`/projects/${p.id}`} className="btn outline">Details</Link>
-                {p.link && <a href={p.link} target="_blank" rel="noreferrer" className="btn">Open</a>}
-                <button className="btn ghost" onClick={()=>{ navigator.clipboard?.writeText(window.location.origin + "/projects/" + p.id); alert("Link copied") }}>Copy Link</button>
-                <div className="card-actions">
-                  <button className="btn small" onClick={()=>{ setOpen(true); /* we will open modal in edit mode by passing existing project — implement by setting state if needed */ }}>Edit</button>
-                  <button className="btn danger small" onClick={()=>handleDelete(p.id)}>Delete</button>
+        <div className="ele-projects-strip-stack">
+          {projectList.map((project) => (
+            <div key={project.id} className="ele-project-strip-node">
+              <span className="ele-strip-index-id">{project.id}</span>
+              <div className="ele-strip-main-content">
+                <div className="ele-strip-title-row">
+                  <h3>{project.name}</h3>
+                  <span className={`ele-strip-badge-status ${project.role === 'CURRENTLY BUILDING' ? 'building' : ''}`}>
+                    {project.role}
+                  </span>
+                </div>
+                <span className="ele-strip-tech-sub">{project.tech}</span>
+                <p className="ele-strip-desc">{project.desc}</p>
+                <div className="ele-strip-bottom-meta">
+                  <span className="ele-strip-meta-txt">{project.meta}</span>
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noreferrer" className="ele-strip-action-anchor">
+                      Launch Production ↗
+                    </a>
+                  )}
                 </div>
               </div>
-            </article>
+            </div>
           ))}
         </div>
-      </div>
 
-      {open && <AddProjectModal onClose={()=>setOpen(false)} onSave={handleSave} />}
-    </section>
+      </div>
+    </div>
   );
 }

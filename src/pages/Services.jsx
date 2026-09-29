@@ -101,7 +101,7 @@ export default function Services() {
             <div className="testi-author">
               <div className="author-info">
                 <strong>Happy Client</strong>
-                <span> Better Tech, Rubavu</span>
+                <span>Tech Startup, Kigali</span>
               </div>
             </div>
           </div>
