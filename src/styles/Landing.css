@@ -1,241 +1,338 @@
-:root {
-    --primary-nv: #3b82f6;
-    --bg-dark: #0b1120;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* ================= COMPLETE RESET & LAYOUT PARAMETERS ================= */
+.ele-landing-viewport {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: #0B0B0B;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.hero-section-nv {
-    min-height: 100vh;
-    background-color: var(--bg-dark);
-    /* Modern Mesh Gradient Background */
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow-x: hidden; /* Important: Fixes mobile horizontal scroll */
-    padding: 100px 5% 60px;
+/* Kukuraho ibintu byose bishobora guhagarika screen cyangwa overflow */
+.ele-landing-viewport *, 
+.ele-landing-viewport *::before, 
+.ele-landing-viewport *::after {
+  box-sizing: border-box !important;
+  max-width: 100%;
 }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-    z-index: 10;
+.ele-hero-backdrop-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center 15%; /* Izamura isura yawe ruguru neza nko ku ifoto */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ele-hero-master-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px 40px 40px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ele-top-badge-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.ele-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #FF3B30;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ================= FLEXIBLE COLUMNS LAYOUT MATRIX ================= */
+.ele-hero-flex-layout,
+.ele-hero-middle-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.ele-hero-text-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ele-circle-badge-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.ele-monumental-header {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 5vw, 4.5rem); /* Ibihindura uburebure bitewe na screen */
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 0 0 12px 0;
+  color: #FFFFFF;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+.ele-featured-collaborators {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ele-ep-pill-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 59, 48, 0.18);
+  border: 1px solid rgba(255, 59, 48, 0.35);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: #FF453A;
+  margin-bottom: 25px;
+}
+
+.ele-pill-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #FF3B30;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ele-editorial-summary-para {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 540px;
+  margin: 0 0 30px 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= HARDCORE PLATFORM CAPSULE PILLS (REAL ICONS MATCH) ================= */
+.ele-streaming-pills-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* Ihita isunika amabutire hasi telefone niyo yaba ari nto */
+  width: 100%;
+}
+
+.ele-stream-pill {
+  background-color: rgba(18, 18, 17, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px; /* Capsule rounding look */
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ele-pill-real-icon {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.ele-stream-pill:hover {
+  background-color: #FFFFFF;
+  color: #0B0B0B;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.ele-stream-pill:hover .ele-pill-real-icon {
+  color: #0B0B0B;
+}
+
+/* ================= TRANSLUCENT FLOATING VENTURE BOX ================= */
+.ele-floating-tour-card {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.ele-tour-card-inner {
+  background: linear-gradient(135deg, rgba(35, 35, 35, 0.65), rgba(15, 15, 14, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  width: 320px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.ele-tour-thumb {
+  width: 75px;
+  height: 105px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.ele-tour-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.ele-tour-tag {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: #FF3B30;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.ele-tour-details h3 {
+  font-size: 1.02rem;
+  margin: 4px 0 12px 0;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #FFFFFF;
+}
+
+.ele-tour-ticket-btn {
+  background-color: #FF3B30;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.ele-tour-ticket-btn:hover { opacity: 0.9; }
+
+/* Bottom Status Ticker Bar */
+.ele-hero-bottom-ticker-bar {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(11, 11, 11, 0.4);
+}
+
+.ele-ticker-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ele-green-live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #34C759;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #34C759;
+  flex-shrink: 0;
+}
+
+/* ================= TABLET & MOBILE RESPONSIVE SAFETY OVERRIDES ================= */
+@media (max-width: 968px) {
+  .ele-hero-flex-layout,
+  .ele-hero-middle-layout {
+    flex-direction: column; /* Ihindura layout ikaba umurongo umwe ujya hasi */
+    align-items: flex-start;
+    gap: 35px;
+  }
+  
+  .ele-floating-tour-card {
+    justify-content: flex-start;
     width: 100%;
+  }
+
+  .ele-tour-card-inner {
+    width: 100%; /* Iritunganya ikaba nini kuri tablet */
+    max-width: 360px;
+  }
+
+  .ele-hero-master-container {
+    padding: 100px 25px 25px 25px;
+  }
+
+  .ele-hero-bottom-ticker-bar {
+    padding: 20px 25px;
+  }
 }
 
-/* Background Animated Orbs */
-.orb {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    filter: blur(100px);
-    z-index: 1;
-    opacity: 0.2;
-}
-.orb-1 { background: var(--primary-nv); top: -50px; right: -50px; }
-.orb-2 { background: #8b5cf6; bottom: -50px; left: -50px; }
+@media (max-width: 480px) {
+  .ele-hero-master-container {
+    padding: 90px 20px 20px 20px;
+  }
 
-/* Left Content Styles */
-.badge-nv {
-    display: inline-flex;
-    align-items: center;
+  .ele-monumental-header {
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .ele-streaming-pills-grid {
     gap: 10px;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary-nv);
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
+  }
 
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--primary-nv);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.hero-title {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    color: var(--text-main);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.name-gradient {
-    background: linear-gradient(90deg, #3b82f6, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.dynamic-slogan {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    color: var(--text-muted);
-    margin-bottom: 25px;
-    font-family: 'Fira Code', monospace;
-}
-
-.typing-text {
-    color: var(--text-main);
-    border-right: 2px solid var(--primary-nv);
-    animation: blink 0.8s infinite;
-}
-
-.hero-description {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 540px;
-    line-height: 1.7;
-    margin-bottom: 40px;
-}
-
-/* Hero Actions */
-.hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.btn-main {
-    background: var(--primary-nv);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: var(--transition);
-}
-
-.btn-main:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-    background: #2563eb;
-}
-
-.social-group {
-    display: flex;
-    gap: 18px;
-}
-
-.social-link {
-    font-size: 1.6rem;
-    color: var(--text-muted);
-    transition: var(--transition);
-}
-
-.social-link:hover { color: var(--text-main); transform: scale(1.2); }
-
-/* Right Content: Image Styling */
-.hero-content-right {
-    display: flex;
+  .ele-stream-pill {
+    padding: 11px 18px;
+    font-size: 0.8rem;
+    width: 100%; /* Kuri telefone, buri button ifata screen yose ngo itarenga */
     justify-content: center;
-}
+  }
 
-.image-stack {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-}
+  .ele-tour-card-inner {
+    max-width: 100%;
+  }
 
-.main-hero-img {
-    width: 100%;
-    border-radius: 30px;
-    position: relative;
-    z-index: 5;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-.image-border-decoration {
-    position: absolute;
-    top: 20px;
-    right: -20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--primary-nv);
-    border-radius: 30px;
-    z-index: 1;
-}
-
-/* Floating Elements */
-.floating-card {
-    position: absolute;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 12px 18px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 10;
-    font-size: 0.9rem;
-    font-weight: 500;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.card-1 { top: 15%; left: -15%; animation: float 5s ease-in-out infinite; }
-.card-2 { bottom: 15%; right: -10%; animation: float 6s ease-in-out infinite 1s; }
-
-
-/* Animations */
-@keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-    100% { transform: scale(0.95); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes blink { 50% { border-color: transparent; } }
-
-/* Responsive Media Queries */
-@media (max-width: 992px) {
-    .hero-section-nv { padding-top: 120px; }
-    
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-description { margin: 0 auto 40px; }
-    
-    .dynamic-slogan { justify-content: center; }
-
-    .hero-actions {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .image-stack {
-        max-width: 300px;
-        margin: 40px auto 0;
-    }
-
-    /* .floating-card { display: none; } /* Kurinda akajagari kuri mobile */
-     */
-    .image-border-decoration { right: -10px; top: 10px; }
+  .ele-hero-bottom-ticker-bar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
 }

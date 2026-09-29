@@ -1,127 +1,145 @@
-:root {
-    --primary-nv: #3b82f6;
-    --marketing-nv: #fbbf24;
-    --creative-nv: #a855f7;
-    --bg-dark: #0b1120;
-    --text-muted: #94a3b8;
+.ele-about-viewport {
+  width: 100%;
+  background-color: #0B0B0B;
+  color: #FFFFFF;
+  padding: 140px 0 60px 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.about-page-nv {
-    background-color: var(--bg-dark);
-    color: #f8fafc;
-    padding: 120px 5% 80px;
-    position: relative;
-    overflow: hidden;
+.ele-about-viewport *, 
+.ele-about-viewport *::before, 
+.ele-about-viewport *::after {
+  box-sizing: border-box !important;
+  max-width: 100%;
 }
 
-.about-glow {
-    position: absolute;
-    top: 5%; left: 50%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
-    transform: translateX(-50%);
-    z-index: 0;
+.ele-about-container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.container-nv { position: relative; z-index: 10; max-width: 1100px; margin: 0 auto; }
-
-/* Header Badge */
-.badge-nv {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary-nv);
-    padding: 6px 18px;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+.ele-about-header {
+  margin-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
 }
 
-/* Stats Grid */
-.stats-grid-nv {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 60px 0 100px;
+.ele-about-num {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
 }
 
-.stat-card-nv {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 35px 20px;
-    border-radius: 24px;
-    text-align: center;
-    transition: 0.4s ease;
+.ele-about-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 6px 0 0 0;
+  letter-spacing: 1px;
 }
 
-.stat-card-nv:hover {
-    transform: translateY(-10px);
-    background: rgba(59, 130, 246, 0.05);
-    border-color: var(--primary-nv);
+.ele-about-split-layout {
+  display: flex;
+  gap: 50px;
+  width: 100%;
 }
 
-.stat-icon-wrapper { font-size: 2.2rem; color: var(--primary-nv); margin-bottom: 15px; }
-
-/* Grid Two Columns */
-.grid-two-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 100px;
+.ele-about-left-side {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
 
-.purpose-card-nv {
-    background: rgba(15, 23, 42, 0.4);
-    padding: 40px;
-    border-radius: 30px;
-    border-left: 4px solid var(--primary-nv);
+/* Fixed photo sizing box to make sure your face is framed perfectly */
+.ele-about-image-wrapper {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #111;
 }
 
-/* Expertise Section */
-.expertise-grid-nv {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+.ele-about-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%; /* Forces the portrait to align beautifully on your face */
+  filter: grayscale(10%);
 }
 
-.expertise-card {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
+.ele-about-faith-card {
+  margin-top: 30px;
+  border-left: 2px solid #FF3B30;
+  padding-left: 20px;
 }
 
-.marketing-icon { color: var(--marketing-nv); }
-.creative-icon { color: var(--creative-nv); }
-
-/* CEO Quote Section */
-.ceo-quote-nv {
-    text-align: center;
-    padding: 80px 40px;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.4));
-    border-radius: 40px;
-    margin-bottom: 100px;
-    position: relative;
+.ele-about-faith-label {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
 }
 
-.quote-icon { font-size: 3rem; color: var(--primary-nv); opacity: 0.2; margin-bottom: 20px; }
-.ceo-quote-nv p { font-size: 1.5rem; font-style: italic; line-height: 1.6; margin-bottom: 20px; }
-.quote-author { color: var(--primary-nv); font-weight: 700; font-size: 1.1rem; }
-
-/* Final CTA */
-.btn-main {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--primary-nv); color: white;
-    padding: 18px 40px; border-radius: 16px;
-    text-decoration: none; font-weight: 700;
-    transition: 0.3s;
+.ele-about-faith-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  margin: 5px 0 0 0;
+  color: #E6E4DD;
 }
 
-.btn-main:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
+.ele-about-right-side {
+  flex: 1;
+}
 
-@media (max-width: 992px) {
-    .grid-two-cols { grid-template-columns: 1fr; }
-    .ceo-quote-nv p { font-size: 1.2rem; }
+.ele-about-essay-lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.ele-about-essay-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 20px;
+}
+
+.ele-about-sub-chapter {
+  margin-top: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+}
+
+.ele-about-sub-chapter h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 968px) {
+  .ele-about-split-layout { flex-direction: column; gap: 35px; }
+  .ele-about-left-side { width: 100%; }
+  .ele-about-image-wrapper { height: 380px; }
+  .ele-about-container { padding: 0 25px; }
+}
+
+@media (max-width: 480px) {
+  .ele-about-title { font-size: 1.8rem; }
+  .ele-about-essay-lead { font-size: 1.2rem; }
+  .ele-about-image-wrapper { height: 300px; }
+  .ele-about-container { padding: 0 20px; }
 }

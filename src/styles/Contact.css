@@ -1,264 +1,160 @@
-/* =================================================== */
-/* 1. Amabara n'Imiterere y'Ibanze (Base Styles)      */
-/* =================================================== */
-:root {
-    --c-primary: #3b82f6;          /* Tech Blue */
-    --c-bg: #0b1120;               /* Deep Slate */
-    --c-card: rgba(255, 255, 255, 0.02);
-    --c-border: rgba(255, 255, 255, 0.05);
-    --c-text-main: #f8fafc;
-    --c-text-muted: #94a3b8;
-    --c-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.ele-contact-viewport {
+  width: 100%;
+  background-color: #0B0B0B;
+  color: #FFFFFF;
+  padding: 140px 0 80px 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.contact-page-nv {
-    background-color: var(--c-bg);
-    color: var(--c-text-main);
-    padding: 120px 5% 80px;
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
+.ele-contact-viewport *, 
+.ele-contact-viewport *::before, 
+.ele-contact-viewport *::after {
+  box-sizing: border-box !important;
+  max-width: 100%;
 }
 
-/* Background Glow Effect */
-.contact-glow {
-    position: absolute;
-    top: 10%; right: -5%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
-    z-index: 0;
-    pointer-events: none;
+.ele-contact-container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.container-nv {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
+.ele-contact-header {
+  margin-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
 }
 
-/* =================================================== */
-/* 2. Header Section                                   */
-/* =================================================== */
-.contact-header-nv {
-    text-align: center;
-    margin-bottom: 80px;
+.ele-contact-num {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
 }
 
-.badge-nv {
-    display: inline-block;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--c-primary);
-    padding: 6px 18px;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    margin-bottom: 20px;
+.ele-contact-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 6px 0 0 0;
+  letter-spacing: 1px;
 }
 
-.contact-header-nv h1 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+.ele-contact-split-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  width: 100%;
 }
 
-.highlight { color: var(--c-primary); }
-
-.header-desc {
-    color: var(--c-text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+.ele-contact-editorial-prompt {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 35px;
 }
 
-/* =================================================== */
-/* 3. Contact Grid (Details & Form)                    */
-/* =================================================== */
-.contact-grid-nv {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
+.ele-direct-matrix-channels {
+  width: 100%;
+}
+
+.ele-channel-line-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.ele-channel-line-row span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ele-channel-line-row a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+
+.ele-channel-line-row a:hover {
+  border-color: #FFFFFF;
+}
+
+.ele-static-value-txt {
+  color: #FFFFFF !important;
+  font-weight: 500;
+}
+
+/* Translucent Terminal Vector Display */
+.ele-terminal-network-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 35px;
+  border-radius: 8px;
+}
+
+.ele-terminal-network-card h4 {
+  margin: 0 0 25px 0;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+}
+
+.ele-terminal-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ele-terminal-links-list li {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ele-terminal-links-list li span {
+  margin-right: 8px;
+}
+
+.ele-terminal-link-icon {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.ele-terminal-links-list a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ele-terminal-links-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .ele-contact-split-grid {
+    grid-template-columns: 1fr;
     gap: 40px;
-    margin-bottom: 100px;
+  }
+  .ele-contact-container { padding: 0 25px; }
 }
 
-/* Info Card Side */
-.info-card-nv {
-    background: var(--c-card);
-    border: 1px solid var(--c-border);
-    padding: 45px;
-    border-radius: 32px;
-    backdrop-filter: blur(10px);
-}
-
-.info-card-nv h3 {
-    font-size: 1.5rem;
-    margin-bottom: 35px;
-    font-weight: 700;
-}
-
-.info-item-nv {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.icon-box-nv {
-    width: 50px; height: 50px;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--c-primary);
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-    transition: var(--c-transition);
-}
-
-.info-item-nv:hover .icon-box-nv {
-    background: var(--c-primary);
-    color: white;
-    transform: scale(1.1);
-}
-
-.label { font-size: 0.8rem; color: var(--c-text-muted); margin: 0; text-transform: uppercase; letter-spacing: 1px; }
-.value { font-weight: 600; margin: 5px 0 0; font-size: 1.05rem; }
-
-/* =================================================== */
-/* 4. Social Media Grid (6 Icons)                      */
-/* =================================================== */
-.social-connect-nv {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid var(--c-border);
-}
-
-.social-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--c-text-muted);
-    margin-bottom: 20px;
-}
-
-.social-links-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-}
-
-.social-links-grid a {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--c-border);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    color: var(--c-text-muted);
-    transition: var(--c-transition);
-}
-
-.social-links-grid a:hover {
-    color: white;
-    background: var(--c-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-}
-
-/* =================================================== */
-/* 5. Contact Form Styling                             */
-/* =================================================== */
-.form-card-nv {
-    background: var(--c-card);
-    border: 1px solid var(--c-border);
-    padding: 50px;
-    border-radius: 32px;
-}
-
-.form-card-nv h3 { font-size: 1.5rem; margin-bottom: 30px; font-weight: 700; }
-
-.modern-form-nv {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group-nv input, 
-.form-group-nv textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--c-border);
-    padding: 18px 24px;
-    border-radius: 16px;
-    color: white;
-    font-size: 1rem;
-    outline: none;
-    transition: var(--c-transition);
-}
-
-.form-group-nv input:focus, 
-.form-group-nv textarea:focus {
-    border-color: var(--c-primary);
-    background: rgba(255, 255, 255, 0.06);
-}
-
-.submit-btn-nv {
-    background: var(--c-primary);
-    color: white;
-    padding: 18px;
-    border-radius: 16px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 12px;
-    transition: var(--c-transition);
-}
-
-.submit-btn-nv:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
-    background: #2563eb;
-}
-
-.submit-btn-nv.sent { background: #10b981; }
-
-/* =================================================== */
-/* 6. Map Section Styling                              */
-/* =================================================== */
-.map-section-nv {
-    margin-top: 100px;
-    text-align: center;
-}
-
-.map-header { margin-bottom: 40px; }
-.map-header h2 { font-size: 2rem; margin-bottom: 10px; }
-
-.map-container-nv {
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--c-border);
-    border-radius: 40px;
-    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
-}
-
-/* =================================================== */
-/* 7. Mobile Responsiveness                            */
-/* =================================================== */
-@media (max-width: 992px) {
-    .contact-grid-nv { grid-template-columns: 1fr; }
-    .social-links-grid { 
-        grid-template-columns: repeat(6, 1fr); 
-        max-width: 350px; 
-    }
-}
-
-@media (max-width: 600px) {
-    .contact-page-nv { padding-top: 100px; }
-    .info-card-nv, .form-card-nv { padding: 30px 20px; }
-    .social-links-grid { grid-template-columns: repeat(3, 1fr); }
-    .map-container-nv { border-radius: 25px; padding: 6px; }
+@media (max-width: 480px) {
+  .ele-contact-title { font-size: 1.8rem; }
+  .ele-contact-container { padding: 0 20px; }
+  .ele-channel-line-row { flex-direction: column; align-items: flex-start; gap: 6px; }
 }

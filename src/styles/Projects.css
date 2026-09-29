@@ -1,0 +1,206 @@
+.ele-projects-viewport {
+  width: 100%;
+  background-color: #0B0B0B;
+  color: #FFFFFF;
+  padding: 140px 0 80px 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.ele-projects-viewport *, 
+.ele-projects-viewport *::before, 
+.ele-projects-viewport *::after {
+  box-sizing: border-box !important;
+  max-width: 100%;
+}
+
+.ele-projects-container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.ele-projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+
+.ele-projects-num {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+}
+
+.ele-projects-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 6px 0 0 0;
+  letter-spacing: 1px;
+}
+
+/* Elegant Minimal GitHub Integration Box */
+.ele-projects-gh-hero-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.ele-gh-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ele-gh-icon {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.ele-projects-gh-hero-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0 15px 0;
+}
+
+.ele-gh-link-btn {
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid #FFFFFF;
+  padding-bottom: 2px;
+  font-weight: 600;
+}
+
+/* Linear Structural Strip Layout */
+.ele-projects-strip-stack {
+  width: 100%;
+}
+
+.ele-project-strip-node {
+  display: grid;
+  grid-template-columns: 0.06fr 0.94fr;
+  padding: 35px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: start;
+}
+
+.ele-strip-index-id {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ele-strip-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ele-strip-title-row h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.ele-strip-badge-status {
+  font-family: monospace;
+  font-size: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ele-strip-badge-status.building {
+  background-color: rgba(255, 69, 58, 0.15);
+  border-color: rgba(255, 69, 58, 0.3);
+  color: #FF453A;
+}
+
+.ele-strip-tech-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 4px 0 14px 0;
+}
+
+.ele-strip-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 16px 0;
+}
+
+.ele-strip-bottom-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ele-strip-meta-txt {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.ele-strip-action-anchor {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid #FFFFFF;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 968px) {
+  .ele-projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ele-projects-gh-hero-card {
+    max-width: 100%;
+  }
+  .ele-project-strip-node {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .ele-strip-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .ele-strip-bottom-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ele-projects-container { padding: 0 25px; }
+}
+
+@media (max-width: 480px) {
+  .ele-projects-title { font-size: 1.8rem; }
+  .ele-projects-container { padding: 0 20px; }
+  .ele-strip-title-row h3 { font-size: 1.15rem; }
+}

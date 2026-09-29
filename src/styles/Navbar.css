@@ -1,146 +1,137 @@
-:root {
-    --primary-nv: #3b82f6;          /* Blue modern */
-    --primary-dark: #2563eb;
-    --bg-dark: #0f172a;             /* Deep slate */
-    --bg-glass: rgba(15, 23, 42, 0.85); 
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-glow: #60a5fa;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* ================= PREMIUM TRANSLUCENT OVERLAY HEADER ================= */
+.ele-nav-header {
+  position: fixed; /* Iguma hejuru mu buryo buhenduye nko ku ifoto */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-nv {
-    position: fixed;
-    top: 0;
+.ele-nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.ele-nav-logo:hover {
+  opacity: 0.9;
+}
+
+.ele-logo-sub {
+  font-weight: 300;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.ele-nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.ele-nav-item-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ele-nav-item-link:hover {
+  color: #FFFFFF;
+}
+
+/* Kwerekana paji umuntu ariho (Active Tracking Indicator) */
+.ele-nav-item-link.active {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.ele-nav-item-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #FF3B30; /* Akanyuguti gutukura kerekana paji iri active nko ku ifoto */
+}
+
+/* Capsule Button ya Contact nko ku ifoto */
+.ele-nav-btn-highlight {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  padding: 10px 20px !important;
+  border-radius: 30px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ele-nav-btn-highlight::after {
+  display: none !important; /* Kukuraho akanyuguti hasi ku kakarita ka button */
+}
+
+.ele-nav-btn-highlight:hover {
+  background-color: #FFFFFF !important;
+  color: #0B0B0B !important;
+  border-color: #FFFFFF !important;
+}
+
+/* ================= MOBILE & TABLET DURABILITY RESPONSIVE RESET ================= */
+@media (max-width: 1024px) {
+  .ele-nav-header {
+    padding: 20px 30px;
+  }
+  .ele-nav-links-wrapper {
+    gap: 18px;
+  }
+  .ele-nav-item-link {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ele-nav-header {
+    position: relative; /* Ikuraho sticky frame kuri mobile ngo itarunda content hasi */
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 20px;
+    background: #0B0B0B;
+  }
+  
+  .ele-nav-links-wrapper {
     width: 100%;
-    z-index: 1000;
-    transition: var(--transition);
-    padding: 20px 0;
-}
-
-/* Iyo umuntu amanitse paji */
-.nav-nv.scrolled {
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
-    padding: 12px 0;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.nav-container-nv {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-/* Brand Style */
-.brand-nv {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap; /* Ihita isunika menu hasi neza telefone niyo yaba ari nto */
     gap: 12px;
-    text-decoration: none;
-    color: var(--text-main);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.brand-logo-bg {
-    background: rgba(59, 130, 246, 0.1);
-    padding: 8px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.brand-icon-nv {
-    color: var(--primary-nv);
-    font-size: 1.4rem;
-}
-
-.highlight { color: var(--primary-nv); }
-
-/* Navigation Links */
-.nav-menu-nv {
-    display: flex;
-    gap: 8px;
-}
-
-.nav-link {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: var(--transition);
-}
-
-.nav-icon-wrapper {
-    font-size: 1.1rem;
-    display: flex;
-    transition: var(--transition);
-}
-
-.nav-link:hover {
-    color: var(--text-main);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.nav-link.active {
-    color: var(--primary-nv);
-    background: rgba(59, 130, 246, 0.1);
-}
-
-.nav-link.active .nav-icon-wrapper {
-    transform: translateY(-2px);
-}
-
-/* Mobile Toggle */
-.nav-toggle-nv {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-main);
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .nav-toggle-nv { display: block; }
-
-    .nav-menu-nv {
-        position: fixed;
-        top: -100vh;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: var(--bg-dark);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        transition: 0.5s ease-in-out;
-        z-index: -1;
-    }
-
-    .nav-menu-nv.open {
-        top: 0;
-    }
-
-    .nav-link {
-        font-size: 1.5rem;
-        width: 80%;
-        justify-content: center;
-        padding: 15px;
-    }
+    justify-content: flex-start;
+  }
+  
+  .ele-nav-item-link {
+    font-size: 0.72rem;
+  }
+  
+  .ele-nav-btn-highlight {
+    padding: 8px 14px !important;
+    width: auto;
+    text-align: center;
+  }
 }
