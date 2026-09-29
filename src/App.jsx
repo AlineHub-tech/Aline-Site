@@ -1,35 +1,29 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import WhatsAppFloat from "./components/WhatsAppFloat"; // ← Import iyi hano
-
-import Landing from "./pages/Landing";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import ProjectPage from "./pages/ProjectPage";
-import Skills from "./pages/Skills";
-import Contact from "./pages/Contact";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Landing from './pages/Landing';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Journey from './pages/Journey';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
-    <>
+    <div className="ele-global-application">
       <Navbar />
-      <main>
+      <div className="ele-main-router-viewport">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/projectpage" element={<ProjectPage />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/journey" element={<Journey />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Fallback niba umuntu anditse link itariyo */}
-          <Route path="*" element={<Landing />} />
         </Routes>
-      </main>
-      <WhatsAppFloat /> {/* ← Iyi izahita igaragara kuri buri paji yose */}
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
