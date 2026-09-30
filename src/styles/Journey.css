@@ -1,140 +1,100 @@
-.ele-journey-viewport {
-  width: 100%;
-  background-color: #0B0B0B;
-  color: #FFFFFF;
-  padding: 130px 0 60px 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-.ele-journey-viewport *, 
-.ele-journey-viewport *::before, 
-.ele-journey-viewport *::after {
-  box-sizing: border-box !important;
-  max-width: 100%;
-}
-
-.ele-journey-container {
+.ele-journey-page {
   max-width: 1350px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 140px 40px 60px 40px;
+  box-sizing: border-box;
 }
 
-.ele-journey-header {
-  margin-bottom: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 25px;
-}
-
-.ele-journey-num {
-  font-family: monospace;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 2px;
-}
-
-.ele-journey-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  margin: 6px 0 15px 0;
-  letter-spacing: 1px;
-}
-
-.ele-journey-trajectory-pills-row {
+.ele-journey-trajectory-pills-matrix {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-.ele-trajectory-pill {
+.ele-trajectory-node-token {
   font-family: monospace;
-  font-size: 0.75rem;
-  background-color: rgba(255, 59, 48, 0.15);
-  border: 1px solid rgba(255, 59, 48, 0.3);
-  color: #FF453A;
-  padding: 4px 12px;
-  border-radius: 15px;
+  font-size: 0.78rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 
-.ele-trajectory-arrow {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
+.ele-token-divider-icon {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
 }
 
-.ele-journey-spine-track {
+.ele-journey-spine {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding-left: 40px;
-  width: 100%;
-  max-width: 950px;
+  padding-left: 35px;
+  margin: 40px 0 80px 10px;
+  max-width: 850px;
 }
 
-.ele-journey-node-item {
+.ele-timeline-row-node {
   display: grid;
-  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-columns: 0.25fr 0.75fr;
   gap: 30px;
-  margin-bottom: 55px;
+  margin-bottom: 50px;
   position: relative;
 }
 
-.ele-journey-node-item::before {
+.ele-timeline-row-node::before {
   content: '';
   position: absolute;
-  left: -45px;
-  top: 4px;
+  left: -40px;
+  top: 6px;
   width: 9px;
   height: 9px;
-  background-color: #FF3B30;
-  border-radius: 50%;
+  background-color: #FF3B30; /* Fine editorial indicator dot */
   box-shadow: 0 0 6px #FF3B30;
+  border-radius: 50%;
 }
 
-.ele-journey-meta-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.ele-journey-step-count {
+.ele-timeline-badge {
   font-family: monospace;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
-  margin-bottom: 4px;
-}
-
-.ele-journey-node-period {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(245, 244, 240, 0.4);
   letter-spacing: 1px;
 }
 
-.ele-journey-content-column h3 {
+.ele-timeline-body-col h3 {
   font-family: 'Cinzel', serif;
   font-size: 1.25rem;
-  margin: 0 0 10px 0;
   font-weight: 500;
+  margin: 0 0 10px 0;
   color: #FFFFFF;
 }
 
-.ele-journey-content-column p {
+.ele-timeline-body-col p {
   font-size: 0.98rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  color: rgba(245, 244, 240, 0.55);
   margin: 0;
 }
 
-@media (max-width: 850px) {
-  .ele-journey-node-item { grid-template-columns: 1fr; gap: 10px; }
-  .ele-journey-spine-track { padding-left: 25px; }
-  .ele-journey-node-item::before { left: -30px; }
-  .ele-journey-container { padding: 0 25px; }
+.ele-timeline-conclusion-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 50px;
 }
 
-@media (max-width: 480px) {
-  .ele-journey-title { font-size: 1.8rem; }
-  .ele-journey-container { padding: 0 20px; }
-  .ele-journey-content-column h3 { font-size: 1.1rem; }
+.ele-conclusion-statement {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .ele-timeline-row-node { grid-template-columns: 1fr; gap: 8px; }
+  .ele-journey-spine { padding-left: 25px; margin-left: 5px; }
+  .ele-timeline-row-node::before { left: -30px; }
+  .ele-journey-page { padding: 100px 25px 40px 25px; }
 }

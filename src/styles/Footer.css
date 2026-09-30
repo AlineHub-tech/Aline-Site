@@ -1,56 +1,55 @@
-.ele-app-footer {
+.ele-footer {
+  max-width: 1350px;
   width: 100%;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  background-color: #0B0B0B;
-  padding: 60px 0 40px 0;
-  margin-top: auto;
-}
-
-.ele-footer-inner {
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 60px;
+  margin: 80px auto 0 auto;
+  padding: 40px;
   box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.ele-footer-top-row {
+.ele-footer-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 40px;
 }
 
-.ele-footer-brand-info h3 {
+.ele-footer-meta h3 {
   font-family: 'Cinzel', serif;
   font-size: 1.1rem;
   margin: 0 0 6px 0;
   letter-spacing: 1px;
 }
 
-.ele-footer-brand-info p {
+.ele-footer-meta p {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  margin: 0;
+  color: rgba(245, 244, 240, 0.5);
+  margin: 4px 0;
 }
 
-.ele-footer-social-vectors {
+.ele-footer-loc {
+  font-family: monospace;
+  font-size: 0.75rem !important;
+  color: rgba(245, 244, 240, 0.3) !important;
+}
+
+.ele-footer-socials {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
-.ele-footer-social-vectors a {
-  color: rgba(255,255,255,0.4);
-  font-size: 1.2rem;
+.ele-footer-socials a {
+  color: rgba(245, 244, 240, 0.4);
+  font-size: 1.15rem;
   transition: color 0.3s;
 }
 
-.ele-footer-social-vectors a:hover {
-  color: #FFFFFF;
+.ele-footer-socials a:hover {
+  color: #F5F4F0;
 }
 
-.ele-footer-bottom-row {
-  border-top: 1px solid rgba(255,255,255,0.05);
+.ele-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -61,17 +60,16 @@
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(245, 244, 240, 0.4);
   margin: 0;
 }
 
-.ele-footer-copyright {
+.ele-footer-copy {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(245, 244, 240, 0.3);
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  .ele-footer-top-row, .ele-footer-bottom-row { flex-direction: column; gap: 20px; align-items: flex-start; }
-  .ele-footer-inner { padding: 0 30px; }
+  .ele-footer-container, .ele-footer-bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
 }

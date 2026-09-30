@@ -1,160 +1,92 @@
-.ele-contact-viewport {
-  width: 100%;
-  background-color: #0B0B0B;
-  color: #FFFFFF;
-  padding: 140px 0 80px 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-.ele-contact-viewport *, 
-.ele-contact-viewport *::before, 
-.ele-contact-viewport *::after {
-  box-sizing: border-box !important;
-  max-width: 100%;
-}
-
-.ele-contact-container {
+.ele-contact-page {
   max-width: 1350px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 140px 40px 60px 40px;
+  box-sizing: border-box;
 }
 
-.ele-contact-header {
-  margin-bottom: 45px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 20px;
-}
-
-.ele-contact-num {
-  font-family: monospace;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 2px;
-}
-
-.ele-contact-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  margin: 6px 0 0 0;
-  letter-spacing: 1px;
-}
-
-.ele-contact-split-grid {
+.ele-contact-editorial-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
-  width: 100%;
+  margin-top: 30px;
 }
 
-.ele-contact-editorial-prompt {
+.ele-contact-narrative-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1.6;
-  color: #FFFFFF;
+  color: #F5F4F0;
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
-.ele-direct-matrix-channels {
+.ele-contact-parameters-list {
   width: 100%;
 }
 
-.ele-channel-line-row {
+.ele-parameter-row-line {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 18px 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 0.92rem;
 }
 
-.ele-channel-line-row span {
-  color: rgba(255, 255, 255, 0.4);
+.ele-parameter-row-line span {
+  color: rgba(245, 244, 240, 0.4);
 }
 
-.ele-channel-line-row a {
-  color: #FFFFFF;
+.ele-parameter-row-line a {
+  color: #F5F4F0;
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color 0.3s;
 }
 
-.ele-channel-line-row a:hover {
-  border-color: #FFFFFF;
-}
-
-.ele-static-value-txt {
-  color: #FFFFFF !important;
-  font-weight: 500;
-}
-
-/* Translucent Terminal Vector Display */
-.ele-terminal-network-card {
+.ele-channels-inner-box {
   background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 35px;
-  border-radius: 8px;
 }
 
-.ele-terminal-network-card h4 {
+.ele-channels-inner-box h4 {
   margin: 0 0 25px 0;
   font-size: 0.8rem;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(245, 244, 240, 0.4);
   font-family: monospace;
 }
 
-.ele-terminal-links-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.ele-contact-pills-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.ele-terminal-links-list li {
+.ele-contact-capsule-btn {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #F5F4F0;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: left;
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
-  margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
 }
 
-.ele-terminal-links-list li span {
-  margin-right: 8px;
-}
-
-.ele-terminal-link-icon {
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  margin-right: 12px;
-  flex-shrink: 0;
-}
-
-.ele-terminal-links-list a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.ele-terminal-links-list a:hover {
-  text-decoration: underline;
+.ele-contact-capsule-btn:hover {
+  background-color: #F5F4F0;
+  color: #0F0F0E;
 }
 
 @media (max-width: 900px) {
-  .ele-contact-split-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .ele-contact-container { padding: 0 25px; }
-}
-
-@media (max-width: 480px) {
-  .ele-contact-title { font-size: 1.8rem; }
-  .ele-contact-container { padding: 0 20px; }
-  .ele-channel-line-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ele-contact-editorial-layout { grid-template-columns: 1fr; gap: 40px; }
+  .ele-parameter-row-line { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ele-contact-page { padding: 100px 25px 40px 25px; }
 }

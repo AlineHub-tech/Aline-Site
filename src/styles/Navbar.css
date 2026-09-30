@@ -1,137 +1,70 @@
-/* ================= PREMIUM TRANSLUCENT OVERLAY HEADER ================= */
-.ele-nav-header {
-  position: fixed; /* Iguma hejuru mu buryo buhenduye nko ku ifoto */
-  top: 0;
-  left: 0;
+.ele-app-container {
+  background-color: #0F0F0E; /* Warm Editorial Charcoal Black */
+  color: #F5F4F0; /* Soft High-End Off-White Content */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ele-main-content {
+  flex: 1;
   width: 100%;
-  z-index: 2000;
+  box-sizing: border-box;
+}
+
+.ele-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 60px;
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.85), rgba(11, 11, 11, 0));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.ele-nav-logo {
+.ele-brand-link {
   font-family: 'Cinzel', serif;
   font-size: 1.05rem;
+  font-weight: 500;
   letter-spacing: 2px;
-  color: #FFFFFF;
+  color: #F5F4F0;
   text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
 }
 
-.ele-nav-logo:hover {
-  opacity: 0.9;
-}
-
-.ele-logo-sub {
-  font-weight: 300;
-  font-family: monospace;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 1px;
-}
-
-.ele-nav-links-wrapper {
+.ele-nav-menu {
   display: flex;
-  align-items: center;
   gap: 25px;
 }
 
-.ele-nav-item-link {
-  color: rgba(255, 255, 255, 0.5);
+.ele-nav-link {
+  color: rgba(245, 244, 240, 0.45);
   text-decoration: none;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  font-size: 0.82rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 500;
   position: relative;
-  padding: 6px 0;
-  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 4px 0;
+  transition: color 0.3s ease;
 }
 
-.ele-nav-item-link:hover {
-  color: #FFFFFF;
+.ele-nav-link:hover, .ele-nav-link.active {
+  color: #F5F4F0;
 }
 
-/* Kwerekana paji umuntu ariho (Active Tracking Indicator) */
-.ele-nav-item-link.active {
-  color: #FFFFFF;
-  font-weight: 600;
-}
-
-.ele-nav-item-link.active::after {
+.ele-nav-link.active::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #FF3B30; /* Akanyuguti gutukura kerekana paji iri active nko ku ifoto */
-}
-
-/* Capsule Button ya Contact nko ku ifoto */
-.ele-nav-btn-highlight {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  padding: 10px 20px !important;
-  border-radius: 30px !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.ele-nav-btn-highlight::after {
-  display: none !important; /* Kukuraho akanyuguti hasi ku kakarita ka button */
-}
-
-.ele-nav-btn-highlight:hover {
-  background-color: #FFFFFF !important;
-  color: #0B0B0B !important;
-  border-color: #FFFFFF !important;
-}
-
-/* ================= MOBILE & TABLET DURABILITY RESPONSIVE RESET ================= */
-@media (max-width: 1024px) {
-  .ele-nav-header {
-    padding: 20px 30px;
-  }
-  .ele-nav-links-wrapper {
-    gap: 18px;
-  }
-  .ele-nav-item-link {
-    font-size: 0.75rem;
-  }
+  background-color: #F5F4F0;
 }
 
 @media (max-width: 768px) {
-  .ele-nav-header {
-    position: relative; /* Ikuraho sticky frame kuri mobile ngo itarunda content hasi */
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-    padding: 20px;
-    background: #0B0B0B;
-  }
-  
-  .ele-nav-links-wrapper {
-    width: 100%;
-    flex-wrap: wrap; /* Ihita isunika menu hasi neza telefone niyo yaba ari nto */
-    gap: 12px;
-    justify-content: flex-start;
-  }
-  
-  .ele-nav-item-link {
-    font-size: 0.72rem;
-  }
-  
-  .ele-nav-btn-highlight {
-    padding: 8px 14px !important;
-    width: auto;
-    text-align: center;
-  }
+  .ele-navbar { flex-direction: column; gap: 15px; align-items: flex-start; padding: 25px 20px; }
+  .ele-nav-menu { flex-wrap: wrap; gap: 12px; }
 }

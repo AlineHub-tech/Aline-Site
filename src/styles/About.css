@@ -1,145 +1,120 @@
-.ele-about-viewport {
-  width: 100%;
-  background-color: #0B0B0B;
-  color: #FFFFFF;
-  padding: 140px 0 60px 0;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-.ele-about-viewport *, 
-.ele-about-viewport *::before, 
-.ele-about-viewport *::after {
-  box-sizing: border-box !important;
-  max-width: 100%;
-}
-
-.ele-about-container {
+.ele-about-page {
   max-width: 1350px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 140px 40px 80px 40px;
+  box-sizing: border-box;
 }
 
-.ele-about-header {
-  margin-bottom: 45px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 20px;
+.ele-about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  margin-top: 40px;
+  align-items: start;
 }
 
-.ele-about-num {
-  font-family: monospace;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 2px;
-}
-
-.ele-about-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  margin: 6px 0 0 0;
-  letter-spacing: 1px;
-}
-
-.ele-about-split-layout {
-  display: flex;
-  gap: 50px;
-  width: 100%;
-}
-
-.ele-about-left-side {
-  width: 35%;
+.ele-about-essay-column {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 }
 
-/* Fixed photo sizing box to make sure your face is framed perfectly */
-.ele-about-image-wrapper {
-  width: 100%;
-  height: 480px;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #111;
-}
-
-.ele-about-profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%; /* Forces the portrait to align beautifully on your face */
-  filter: grayscale(10%);
-}
-
-.ele-about-faith-card {
-  margin-top: 30px;
-  border-left: 2px solid #FF3B30;
-  padding-left: 20px;
-}
-
-.ele-about-faith-label {
-  font-family: monospace;
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 1px;
-}
-
-.ele-about-faith-quote {
+.ele-essay-lead {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.25rem;
-  margin: 5px 0 0 0;
-  color: #E6E4DD;
-}
-
-.ele-about-right-side {
-  flex: 1;
-}
-
-.ele-about-essay-lead {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  line-height: 1.5;
+  font-size: 1.55rem;
+  line-height: 1.6;
   color: #FFFFFF;
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 30px;
 }
 
-.ele-about-essay-body {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 20px;
+.ele-essay-chapter-block {
+  margin-bottom: 40px;
 }
 
-.ele-about-sub-chapter {
-  margin-top: 35px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 20px;
-}
-
-.ele-about-sub-chapter h3 {
+.ele-essay-chapter-block h3 {
   font-family: 'Cinzel', serif;
   font-size: 1.15rem;
   font-weight: 500;
+  color: #FF3B30; /* Fine accent indicator alignment */
+  letter-spacing: 1px;
   margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.ele-essay-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(245, 244, 240, 0.7);
+  margin-bottom: 20px;
+}
+
+.ele-essay-body strong {
   color: #FFFFFF;
+  font-weight: 600;
+}
+
+.ele-about-portrait-column {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 140px; /* Kept pinned beautifully during long scrolls */
+}
+
+.ele-about-image-wrapper {
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  background-color: #1A1A19;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ele-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%; /* Perfect framing locking onto your face */
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.ele-about-image-wrapper:hover .ele-about-img {
+  filter: grayscale(20%);
+}
+
+.ele-about-caption-label {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: rgba(245, 244, 240, 0.35);
+  margin-top: 14px;
   letter-spacing: 0.5px;
 }
 
-@media (max-width: 968px) {
-  .ele-about-split-layout { flex-direction: column; gap: 35px; }
-  .ele-about-left-side { width: 100%; }
-  .ele-about-image-wrapper { height: 380px; }
-  .ele-about-container { padding: 0 25px; }
+/* ================= COMPREHENSIVE RESPONSIVE TUNING ================= */
+@media (max-width: 1024px) {
+  .ele-about-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .ele-about-portrait-column {
+    position: static;
+    width: 100%;
+    max-width: 480px;
+  }
+  .ele-about-image-wrapper {
+    height: 440px;
+  }
+  .ele-about-page {
+    padding: 100px 25px 40px 25px;
+  }
 }
 
 @media (max-width: 480px) {
-  .ele-about-title { font-size: 1.8rem; }
-  .ele-about-essay-lead { font-size: 1.2rem; }
-  .ele-about-image-wrapper { height: 300px; }
-  .ele-about-container { padding: 0 20px; }
+  .ele-essay-lead { font-size: 1.25rem; }
+  .ele-essay-body { font-size: 0.98rem; line-height: 1.75; }
+  .ele-about-image-wrapper { height: 320px; }
+  .ele-about-page { padding: 90px 20px 40px 20px; }
 }

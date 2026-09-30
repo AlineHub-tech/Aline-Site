@@ -2,13 +2,12 @@
 .ele-landing-viewport {
   width: 100%;
   max-width: 100vw;
-  min-height: 100vh;
   background-color: #0B0B0B;
+  color: #FFFFFF;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Kukuraho ibintu byose bishobora guhagarika screen cyangwa overflow */
 .ele-landing-viewport *, 
 .ele-landing-viewport *::before, 
 .ele-landing-viewport *::after {
@@ -16,11 +15,12 @@
   max-width: 100%;
 }
 
+/* ================= 01 // INTRO FULLSCREEN HERO OVERLAYS ================= */
 .ele-hero-backdrop-wrapper {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
-  background-position: center 15%; /* Izamura isura yawe ruguru neza nko ku ifoto */
+  background-position: center 22%; /* Kosorera neza portrait matrix kugira ngo mu maso hawe hamanuke hagaragare neza */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,7 @@
 .ele-hero-master-container {
   width: 100%;
   margin: 0 auto;
+  max-width: 1350px;
   padding: 120px 40px 40px 40px;
   flex: 1;
   display: flex;
@@ -43,7 +44,7 @@
   font-family: monospace;
   font-size: 0.72rem;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 20px;
 }
 
@@ -55,8 +56,6 @@
   flex-shrink: 0;
 }
 
-/* ================= FLEXIBLE COLUMNS LAYOUT MATRIX ================= */
-.ele-hero-flex-layout,
 .ele-hero-middle-layout {
   display: flex;
   justify-content: space-between;
@@ -79,29 +78,27 @@
   height: 65px;
   border-radius: 50%;
   background-size: cover;
-  background-position: center;
+  background-position: center 22%;
   margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
 }
-
 .ele-monumental-header {
   font-family: 'Cinzel', serif;
-  font-size: clamp(2.2rem, 5vw, 4.5rem); /* Ibihindura uburebure bitewe na screen */
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
   line-height: 1.05;
   font-weight: 400;
   letter-spacing: -2px;
   margin: 0 0 12px 0;
-  color: #FFFFFF;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
 .ele-featured-collaborators {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.95);
   margin: 0 0 20px 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -112,11 +109,11 @@
   gap: 8px;
   background-color: rgba(255, 59, 48, 0.18);
   border: 1px solid rgba(255, 59, 48, 0.35);
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: #FF453A;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .ele-pill-dot {
@@ -127,20 +124,16 @@
   flex-shrink: 0;
 }
 
-.ele-editorial-summary-para {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 540px;
+.ele-hero-geotag-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0 0 30px 0;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* ================= HARDCORE PLATFORM CAPSULE PILLS (REAL ICONS MATCH) ================= */
 .ele-streaming-pills-grid {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; /* Ihita isunika amabutire hasi telefone niyo yaba ari nto */
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -150,7 +143,7 @@
   color: #FFFFFF;
   text-decoration: none;
   padding: 12px 22px;
-  border-radius: 30px; /* Capsule rounding look */
+  border-radius: 30px;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -164,7 +157,6 @@
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   flex-shrink: 0;
-  transition: color 0.3s ease;
 }
 
 .ele-stream-pill:hover {
@@ -174,11 +166,8 @@
   transform: translateY(-2px);
 }
 
-.ele-stream-pill:hover .ele-pill-real-icon {
-  color: #0B0B0B;
-}
+.ele-stream-pill:hover .ele-pill-real-icon { color: #0B0B0B; }
 
-/* ================= TRANSLUCENT FLOATING VENTURE BOX ================= */
 .ele-floating-tour-card {
   display: flex;
   justify-content: flex-end;
@@ -203,7 +192,7 @@
   height: 105px;
   border-radius: 6px;
   background-size: cover;
-  background-position: center;
+  background-position: center 22%;
   flex-shrink: 0;
 }
 
@@ -227,13 +216,13 @@
   margin: 4px 0 12px 0;
   font-weight: 600;
   line-height: 1.3;
-  color: #FFFFFF;
 }
 
 .ele-tour-ticket-btn {
   background-color: #FF3B30;
   color: #FFFFFF;
-  text-decoration: none;
+  border: none;
+  font-family: inherit;
   font-size: 0.72rem;
   font-weight: 700;
   text-align: center;
@@ -241,12 +230,9 @@
   border-radius: 20px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
-.ele-tour-ticket-btn:hover { opacity: 0.9; }
-
-/* Bottom Status Ticker Bar */
 .ele-hero-bottom-ticker-bar {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -258,81 +244,301 @@
   font-size: 0.72rem;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(11, 11, 11, 0.4);
 }
 
-.ele-ticker-left {
-  display: flex;
+.ele-ticker-left { display: flex; align-items: center; gap: 8px; }
+.ele-green-live-dot { width: 6px; height: 6px; background-color: #34C759; border-radius: 50%; box-shadow: 0 0 8px #34C759; flex-shrink: 0; }
+/* ================= 02 // REUSABLE NARRATIVE SECTIONS (GAPS OPTIMIZED FROM 120PX TO 60PX) ================= */
+.ele-editorial-block-section {
+  width: 100%;
+  padding: 60px 0; /* Gabanyije amapadding bishyirwa kuri 60px ku mfuruka zose */
+  background-color: #0B0B0B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ele-darker-bg-section {
+  background-color: #070707;
+}
+
+.ele-container-inner {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.ele-asymmetric-row-grid {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.ele-chapter-indicator {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #FF3B30;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ele-editorial-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+}
+
+.ele-sidebar-sub-context {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+  margin-top: 15px;
+  max-width: 260px;
+}
+
+.ele-editorial-lead-essay {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.ele-editorial-body-essay {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0;
+}
+
+.ele-text-white-boost { color: rgba(255, 255, 255, 0.85); }
+.ele-text-dim-tweak { margin-bottom: 40px; }
+
+.ele-editorial-motto-callout {
+  margin: 30px 0;
+  border-left: 2px solid #FF3B30;
+  padding-left: 20px;
+}
+
+.ele-editorial-motto-callout p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.ele-editorial-arrow-action-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #FFFFFF;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.ele-green-live-dot {
-  width: 6px;
-  height: 6px;
-  background-color: #34C759;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #34C759;
-  flex-shrink: 0;
+.ele-arrow-glyph { transition: transform 0.3s ease; }
+.ele-editorial-arrow-action-btn:hover .ele-arrow-glyph { transform: translateX(6px); }
+.ele-spacing-top-boost { margin-top: 25px; }
+
+.ele-heavy-action-boost {
+  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-bottom: 6px;
 }
 
-/* ================= TABLET & MOBILE RESPONSIVE SAFETY OVERRIDES ================= */
+.ele-linear-work-stack {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ele-work-strip-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ele-work-strip-item h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.ele-work-strip-item p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  line-height: 1.5;
+}
+/* ================= 04 // THREE WORLDS PROTOCOL ================= */
+.ele-three-worlds-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ele-world-node-box {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.ele-world-node-box h4 {
+  font-family: monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  color: #FF3B30;
+}
+
+.ele-world-node-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+/* ================= 05 // TRAJECTORY CHRONO PILLS ================= */
+.ele-journey-trajectory-pills-matrix {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.ele-trajectory-node-token {
+  font-family: monospace;
+  font-size: 0.78rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.ele-token-divider-icon {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= 06 // VENTURES ARCHITECTURES ================= */
+.ele-ventures-editorial-stack-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ele-venture-editorial-node {
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ele-v-header-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ele-v-header-line h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.ele-v-tag {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ele-v-slogan-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 6px 0 0 0;
+}
+
+/* ================= 07 // CURRENTLY TERMINAL BULLETS ================= */
+.ele-currently-list-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+}
+
+.ele-currently-list-bullets li {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+  padding-left: 20px;
+  position: relative;
+}
+
+.ele-currently-list-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #FF3B30;
+}
+
+.ele-currently-not-finished-banner {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* OUTRO ELEMENTS */
+.ele-outro-location-timestamp-footer {
+  margin-top: 60px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+/* ==================== HIGH-END RESPONSIVE SAFETY RE-CONFIGURATIONS ==================== */
 @media (max-width: 968px) {
-  .ele-hero-flex-layout,
-  .ele-hero-middle-layout {
-    flex-direction: column; /* Ihindura layout ikaba umurongo umwe ujya hasi */
-    align-items: flex-start;
+  .ele-hero-middle-layout,
+  .ele-asymmetric-row-grid {
+    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 35px;
+    align-items: flex-start;
   }
-  
-  .ele-floating-tour-card {
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .ele-tour-card-inner {
-    width: 100%; /* Iritunganya ikaba nini kuri tablet */
-    max-width: 360px;
-  }
-
-  .ele-hero-master-container {
-    padding: 100px 25px 25px 25px;
-  }
-
-  .ele-hero-bottom-ticker-bar {
-    padding: 20px 25px;
-  }
+  .ele-floating-tour-card { justify-content: flex-start; width: 100%; }
+  .ele-tour-card-inner { width: 100%; max-width: 360px; }
+  .ele-three-worlds-editorial-grid { grid-template-columns: 1fr; gap: 25px; }
+  .ele-hero-master-container, .ele-container-inner { padding: 100px 25px 25px 25px; }
+  .ele-hero-bottom-ticker-bar { padding: 20px 25px; }
+  .ele-editorial-block-section { padding: 40px 0; } /* Gaps optimized dynamic for tablets */
 }
 
 @media (max-width: 480px) {
-  .ele-hero-master-container {
-    padding: 90px 20px 20px 20px;
-  }
-
-  .ele-monumental-header {
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-  }
-
-  .ele-streaming-pills-grid {
-    gap: 10px;
-  }
-
-  .ele-stream-pill {
-    padding: 11px 18px;
-    font-size: 0.8rem;
-    width: 100%; /* Kuri telefone, buri button ifata screen yose ngo itarenga */
-    justify-content: center;
-  }
-
-  .ele-tour-card-inner {
-    max-width: 100%;
-  }
-
-  .ele-hero-bottom-ticker-bar {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
+  .ele-hero-master-container, .ele-container-inner { padding: 90px 20px 20px 20px; }
+  .ele-monumental-header { letter-spacing: -1px; margin-bottom: 8px; }
+  .ele-stream-pill { padding: 11px 18px; font-size: 0.8rem; width: 100%; justify-content: center; }
+  .ele-tour-card-inner { max-width: 100%; }
+  .ele-hero-bottom-ticker-bar { flex-direction: column; gap: 8px; align-items: flex-start; padding: 15px 20px; }
+  .ele-v-header-line { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .ele-currently-list-bullets li { font-size: 1.15rem; }
 }
