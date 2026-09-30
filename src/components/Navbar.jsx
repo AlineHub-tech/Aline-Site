@@ -4,37 +4,29 @@ import '../styles/Navbar.css';
 
 export default function Navbar() {
   const location = useLocation();
-
-  // Map y'amapaji yawe asobanutse neza nta magambo ya template vavanze
-  const links = [
+  const navigationItems = [
     { path: '/', label: 'Home' },
     { path: '/journey', label: 'Journey' },
     { path: '/about', label: 'About' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/projects', label: 'Projects' },
+    { path: '/projects', label: 'Projects & Ventures' },
     { path: '/contact', label: 'Contact' }
   ];
 
   return (
-    <header className="ele-nav-header">
-      <div className="ele-nav-brand-block">
-        <Link to="/" className="ele-nav-logo">
-          UMUGWANEZA ALINE <span className="ele-logo-sub">. ARCHIVE</span>
-        </Link>
+    <header className="ele-navbar">
+      <div className="ele-nav-brand">
+        <Link to="/" className="ele-brand-link">UMUGWANEZA ALINE</Link>
       </div>
-      <nav className="ele-nav-links-wrapper">
-        {links.map((link) => {
-          const isActive = location.pathname === link.path;
-          return (
-            <Link 
-              key={link.path} 
-              to={link.path} 
-              className={`ele-nav-item-link ${isActive ? 'active' : ''} ${link.path === '/contact' ? 'ele-nav-btn-highlight' : ''}`}
-            >
-              {link.label}
-            </Link>
-          );
-        })}
+      <nav className="ele-nav-menu">
+        {navigationItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`ele-nav-link ${location.pathname === item.path ? 'active' : ''}`}
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </header>
   );
