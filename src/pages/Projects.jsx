@@ -1,130 +1,85 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa6';
 import '../styles/Projects.css';
 
 export default function Projects() {
-  const projectList = [
+  const projects = [
     {
-      id: '01',
-      name: 'BYTEFLOW LTD',
-      role: 'FOUNDER & BUILDER',
-      tech: 'Full-Stack Software Architecture',
-      desc: 'My technology and digital solutions company. Engineering custom full-stack web platforms, visual brand architectures, advanced business logic systems, cloud web hosting configurations, and enterprise domain solutions.',
-      link: 'https://vercel.app',
-      meta: 'WhatsApp: +250 796 023 452 | Email: byteflowltd9@gmail.com'
+      name: 'LifeOS',
+      tech: 'MERN Stack / Product Development',
+      desc: 'An advanced multi-layered personal assistant and mentor manager framework. Formulated to streamline lifestyle routines, track financial accountability, analyze discipline parameters, and process custom progress summaries.'
     },
     {
-      id: '02',
-      name: 'A BETTER TOMORROW FOUNDATION',
-      role: 'FOUNDER',
-      tech: 'Social Impact Infrastructure',
-      desc: 'A dedicated social impact initiative structured to support street children and highly vulnerable families across Rwanda. Rebuilding hope and securing concrete opportunities through practical skill incubation and structured mentorship.',
-      link: 'https://vercel.app',
-      meta: 'Contact: +250 796 023 452 | Email: abettertomorrowf@gmail.com'
+      name: 'Nexus News Network',
+      tech: 'React / Node.js / MongoDB / Vercel / Render',
+      desc: 'A full-scale content publishing media network supporting secure administrator content verification controls, category filtering, publishing workflows, and localized Kinyarwanda language content arrays.'
     },
     {
-      id: '03',
-      name: 'CHAPTERS STUDIO',
-      role: 'FOUNDER & CREATIVE',
-      tech: 'Visual Storytelling Medium',
-      desc: 'My photography and creative direction studio engineered to capture moments and document history. Specializing in high-end wedding journals, birthdays, graduation frames, pristine outdoor portraits, and editorial layout compositions.',
-      link: null,
-      meta: 'Instagram: Chapters__Studios | Email: chaptersstudio1@gmail.com | Phone: +250 726 113 930'
+      name: 'Kigali Bites',
+      tech: 'UI/UX / Figma / Product Concept Build',
+      desc: 'A complete food discovery interface designed to connect culinary businesses with local consumers. Built to map out rapid checkout interfaces, dynamic menu browsing, and optimization dispatch modules in Kigali.'
     },
     {
-      id: '04',
-      name: 'LIFEOS',
-      role: 'CONCEPT SYSTEM',
-      tech: 'MERN Stack (MongoDB, Express, React, Node.js)',
-      desc: 'An advanced, conceptual personal coach assistant dashboard built to manage daily routines, track financial accountability, monitor discipline curves, and generate automated performance data insights.',
-      link: null,
-      meta: 'Source Code Secured via Private Repository'
+      name: 'Buy & Get',
+      tech: 'Full-Stack E-commerce Engine',
+      desc: 'An online storefront layout optimized for responsive interactive product matrices, dynamic cart state management, streamlined purchase workflows, and seamless customer experiences.'
+    }
+  ];
+
+  const ventures = [
+    {
+      title: 'ByteFlow Ltd — Founder & Builder',
+      slogan: 'Engineering Digital Success.',
+      desc: 'My flagship technology company focused on delivering full-stack web architectures, specialized branding blueprints, enterprise web systems, hosting configurations, and digital product consulting.'
     },
     {
-      id: '05',
-      name: 'NEXUS NEWS NETWORK',
-      role: 'DEPLOYED PLATFORM',
-      tech: 'React, Node.js, MongoDB, Vercel, Render',
-      desc: 'A full-scale media network built with secure administrative control mechanisms, publishing approval pipelines, secure content categories, and native Kinyarwanda language content matrices.',
-      link: null,
-      meta: 'Database Clusters Managed via MongoDB Atlas'
+      title: 'A Better Tomorrow Foundation — Founder',
+      slogan: 'Restoring Hope, Building Future.',
+      desc: 'A direct social impact platform structured to offer genuine aid, critical mindset mentorship, and practical skill workshops for street youth and vulnerable communities in Rwanda.'
     },
     {
-      id: '06',
-      name: 'KIGALI BITES',
-      role: 'CURRENTLY BUILDING',
-      tech: 'Figma UI/UX & React Engineering',
-      desc: 'A modern food discovery storefront platform mapping culinary operations, business listings, and product distribution flows to streamline ordering and food delivery around Kigali.',
-      link: null,
-      meta: 'Active Prototyping & Layout Blueprint Complete'
-    },
-    {
-      id: '07',
-      name: 'BUY & GET E-COMMERCE',
-      role: 'PRODUCTION BASE',
-      tech: 'JavaScript Core, CSS3 Interface Layout',
-      desc: 'An e-commerce shopping framework optimized for slick product item matrices, dynamic cart status mutations, and elegant client checkout parameters.',
-      link: null,
-      meta: 'Secured via Vanilla State Implementation'
-    },
-    {
-      id: '08',
-      name: 'IMENA MOVES KIDZ',
-      role: 'LIVE BUILD',
-      tech: 'Web Engineering & Creative Strategy',
-      desc: 'A dedicated web presence architecture developed to organize, deploy, and scale interactive arts programs and active performance educational tools for kids.',
-      link: 'https://vercel.app',
-      meta: 'Production Build Deployed via Vercel Pipelines'
+      title: 'Chapters Studio — Founder & Creative',
+      slogan: 'Capturing Moments. Telling Stories.',
+      desc: 'My multimedia creative lens focused on curated photography journals, cinematic event recordings, organic lookbooks, and high-concept editorial brand asset generation.'
     }
   ];
 
   return (
-    <div className="ele-projects-viewport">
-      <div className="ele-projects-container">
-        
-        <div className="ele-projects-header">
-          <div className="ele-header-left">
-            <span className="ele-projects-num">04 // PRODUCTION CHRONOLOGY</span>
-            <h2 className="ele-projects-title">Ventures & Projects</h2>
-          </div>
-          
-          <div className="ele-projects-gh-hero-card">
-            <div className="ele-gh-card-header">
-              <FaGithub className="ele-gh-icon" />
-              <span>@AlineHub-tech</span>
-            </div>
-            <p>“See what I build. See how I learn. See how I experiment.”</p>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="ele-gh-link-btn">Access Master GitHub ↗</a>
-          </div>
+    <div className="ele-projects-page ele-view-fade">
+      {/* PROJECTS SECTION */}
+      <section className="ele-portfolio-showcase-section">
+        <div className="ele-section-header">
+          <span className="ele-section-num">04 // PRODUCTION WORKS</span>
+          <h2 className="ele-section-main-title">Selected Work</h2>
         </div>
-
-        <div className="ele-projects-strip-stack">
-          {projectList.map((project) => (
-            <div key={project.id} className="ele-project-strip-node">
-              <span className="ele-strip-index-id">{project.id}</span>
-              <div className="ele-strip-main-content">
-                <div className="ele-strip-title-row">
-                  <h3>{project.name}</h3>
-                  <span className={`ele-strip-badge-status ${project.role === 'CURRENTLY BUILDING' ? 'building' : ''}`}>
-                    {project.role}
-                  </span>
-                </div>
-                <span className="ele-strip-tech-sub">{project.tech}</span>
-                <p className="ele-strip-desc">{project.desc}</p>
-                <div className="ele-strip-bottom-meta">
-                  <span className="ele-strip-meta-txt">{project.meta}</span>
-                  {project.link && (
-                    <a href={project.link} target="_blank" rel="noreferrer" className="ele-strip-action-anchor">
-                      Launch Production ↗
-                    </a>
-                  )}
-                </div>
+        <div className="ele-projects-editorial-stack">
+          {projects.map((proj, idx) => (
+            <div key={idx} className="ele-project-strip-item">
+              <div className="ele-project-strip-header">
+                <h3>{proj.name}</h3>
+                <span className="ele-project-tech-tag">{proj.tech}</span>
               </div>
+              <p className="ele-project-desc-para">{proj.desc}</p>
             </div>
           ))}
         </div>
+      </section>
 
-      </div>
+      {/* VENTURES SECTION */}
+      <section className="ele-ventures-section">
+        <div className="ele-section-header">
+          <span className="ele-section-num">05 // ENTERPRISE NODES</span>
+          <h2 className="ele-section-main-title">Things I’m building beyond myself.</h2>
+        </div>
+        <div className="ele-ventures-editorial-grid">
+          {ventures.map((ven, idx) => (
+            <div key={idx} className="ele-venture-strip-card">
+              <h3>{ven.title}</h3>
+              <p className="ele-venture-slogan-label">“{ven.slogan}”</p>
+              <p className="ele-venture-body-desc">{ven.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

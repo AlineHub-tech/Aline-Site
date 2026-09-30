@@ -1,85 +1,76 @@
 import React from 'react';
+import { FaChevronRight } from 'react-icons/fa6';
 import '../styles/Journey.css';
 
 export default function Journey() {
-  const fullStorySteps = [
+  const roadmapNodes = [
     {
-      marker: '01',
-      period: '2024 — THE BEGINNING',
-      headline: 'Software Development Foundations',
-      text: 'After completing my studies in Software Development in 2024, I knew that finishing school was not the end of my learning journey. It was the beginning of figuring out what I could actually build with what I had learned. I started looking for opportunities to grow beyond the classroom — learning, practicing, experimenting, making mistakes, and building small things that gradually became bigger ideas.'
+      marker: '2024',
+      title: 'Software Development Core',
+      desc: 'Completed secondary high school education with a dedicated technical background specialized in Software Development frameworks, responsive user interfaces, and core programming logic.'
     },
     {
-      marker: '02',
-      period: 'KEPLER SYSTEM INCUBATION',
-      headline: 'Evolving Capabilities & Efficiency',
-      text: 'One of the places that contributed to my growth was Kepler College, where I gained additional skills in ICT, Microsoft Office, and Google Apps. Beyond the technical skills, the experience helped me understand the importance of practical learning, adaptability, and preparing myself for a world where technology is constantly changing.'
+      marker: 'KEPLER',
+      title: 'Kepler College Systems',
+      desc: 'Trained extensively in foundational ICT ecosystems, professional Microsoft Office data workflows, and collaborative Google Apps production tools.'
     },
     {
-      marker: '03',
-      period: 'GREENLAND FILM SCHOOL',
-      headline: 'Discovering Visual Aesthetics & Creative Language',
-      text: 'Technology was only one side of my story. At Greenland Film School, I explored Photography and Graphic Design — two areas that opened another part of my creativity. I began to understand that creating is not only about writing code. It can also be about composition, visual communication, storytelling, and emotion.'
+      marker: 'CREATIVE',
+      title: 'Greenland Film School Integration',
+      desc: 'Explored aesthetic fields in Photography and specialized Graphic Design, shifting boundaries into organic visual storytelling, lighting mechanics, and composition lines.'
     },
     {
-      marker: '04',
-      period: 'DREAMIZE AFRICA ACCELERATION',
-      headline: 'FinTech Frameworks & Collaborative Engineering',
-      text: 'My next chapter took me into a different space through Dreamize Africa, where I joined an intensive 4-month FinTech program and continued developing my technical and problem-solving mindset. That experience pushed me closer to the idea of building solutions, not just learning technologies. I worked with real-world development toolchains including GitHub, VS Code, Notion, and Slack.'
+      marker: 'FINTECH',
+      title: 'Dreamize Africa FinTech Program',
+      desc: 'Immersed in an intensive 4-month FinTech accelerator. Mastered collaborative problem-solving, real-world engineering project workflows, and version control metrics inside active developer environments.'
     },
     {
-      marker: '05',
-      period: 'PRODUCTION LOG PARADIGM',
-      headline: 'From Developer to Active Product Builder',
-      text: 'As I continued learning, I started creating projects of my own. I explored web development, UI/UX, backend systems, databases, APIs, and deployment. I built frameworks like LifeOS (MERN tracking environment), Nexus News Network, Kigali Bites culinary discovery blueprints, and the Buy & Get E-commerce application.'
+      marker: 'BUILDING',
+      title: 'Building Projects Ecosystem',
+      desc: 'Began executing functional independent applications, optimizing multi-tier full-stack architectures (MERN Stack builds), backend REST APIs, secure databases, and production server deployments.'
     },
     {
-      marker: '06',
-      period: 'THE FOUNDER MATRIX (CURRENT STATUS)',
-      headline: 'Launching Multi-Ecosystem Ventures & Foundations',
-      text: 'Today, I’m using technology and creativity to scale larger ideas. I am the Founder & Builder of ByteFlow Ltd (engineering premier digital solutions), the Founder of A Better Tomorrow Foundation (rebuilding hope and support ecosystems for vulnerable demographics in Rwanda), and the Founder & Creative of Chapters Studio (curating fine-art photography and memories).'
+      marker: 'FOUNDING',
+      title: 'Founding Active Ventures',
+      desc: 'Stepped into true purpose-driven entrepreneurship by self-building active independent platforms including ByteFlow Ltd, Chapters Studio, and A Better Tomorrow Foundation.'
     }
   ];
 
   return (
-    <div className="ele-journey-viewport">
-      <div className="ele-journey-container">
+    <div className="ele-journey-page ele-view-fade">
+      <div className="ele-section-header">
+        <span className="ele-section-num">03 // CHRONOLOGY LOG</span>
+        <h2 className="ele-section-main-title">My Documentary Timeline</h2>
         
-        <div className="ele-journey-header">
-          <span className="ele-journey-num">04 // FULL CHRONOLOGY TEXT</span>
-          <h2 className="ele-journey-title">My Complete Journey</h2>
-          <div className="ele-journey-trajectory-pills-row">
-            <span className="ele-trajectory-pill">Learning</span>
-            <span className="ele-trajectory-arrow">→</span>
-            <span className="ele-trajectory-pill">Creating</span>
-            <span className="ele-trajectory-arrow">→</span>
-            <span className="ele-trajectory-pill">Building</span>
-            <span className="ele-trajectory-arrow">→</span>
-            <span className="ele-trajectory-pill">Founding</span>
-            <span className="ele-trajectory-arrow">→</span>
-            <span className="ele-trajectory-pill">Growing</span>
-          </div>
+        <div className="ele-journey-trajectory-pills-matrix">
+          <span className="ele-trajectory-node-token">Learning</span>
+          <FaChevronRight className="ele-token-divider-icon" />
+          <span className="ele-trajectory-node-token">Creating</span>
+          <FaChevronRight className="ele-token-divider-icon" />
+          <span className="ele-trajectory-node-token">Building</span>
+          <FaChevronRight className="ele-token-divider-icon" />
+          <span className="ele-trajectory-node-token">Founding</span>
+          <FaChevronRight className="ele-token-divider-icon" />
+          <span className="ele-trajectory-node-token">Growing</span>
         </div>
+      </div>
 
-        {/* Continuous Spine Timeline including all chapters */}
-        <div className="ele-journey-spine-track">
-          {fullStorySteps.map((step) => (
-            <div key={step.marker} className="ele-journey-node-item">
-              
-              <div className="ele-journey-meta-column">
-                <span className="ele-journey-step-count">{step.marker}</span>
-                <span className="ele-journey-node-period">{step.period}</span>
-              </div>
-              
-              <div className="ele-journey-content-column">
-                <h3>{step.headline}</h3>
-                <p>{step.text}</p>
-              </div>
-
+      <div className="ele-journey-spine">
+        {roadmapNodes.map((node, index) => (
+          <div key={index} className="ele-timeline-row-node">
+            <div className="ele-timeline-marker-col">
+              <span className="ele-timeline-badge">{node.marker}</span>
             </div>
-          ))}
-        </div>
+            <div className="ele-timeline-body-col">
+              <h3>{node.title}</h3>
+              <p>{node.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
+      <div className="ele-timeline-conclusion-footer">
+        <h2 className="ele-conclusion-statement">“This is not the finished story.”</h2>
       </div>
     </div>
   );
