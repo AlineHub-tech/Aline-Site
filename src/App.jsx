@@ -7,6 +7,7 @@ import About from './pages/About';
 import Journey from './pages/Journey';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import './styles/SiteEditorial.css';
 
 export default function App() {
   return (
