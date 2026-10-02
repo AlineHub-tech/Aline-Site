@@ -68,3 +68,71 @@
   .ele-navbar { flex-direction: column; gap: 15px; align-items: flex-start; padding: 25px 20px; }
   .ele-nav-menu { flex-wrap: wrap; gap: 12px; }
 }
+
+.ele-app-container:has(.ele-landing-viewport) .ele-navbar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 5;
+  width: 100%;
+  max-width: 1440px;
+  padding: 25px 7.2vw;
+  transform: translateX(-50%);
+  border-bottom-color: rgba(255, 255, 255, 0.24);
+}
+
+.ele-app-container:has(.ele-landing-viewport) .ele-brand-link {
+  color: #fff;
+  font-family: 'Helvetica Neue', 'Aptos Display', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.ele-app-container:has(.ele-landing-viewport) .ele-nav-menu {
+  gap: clamp(14px, 2.2vw, 32px);
+}
+
+.ele-app-container:has(.ele-landing-viewport) .ele-nav-link {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.72rem;
+  letter-spacing: 0.8px;
+}
+
+.ele-app-container:has(.ele-landing-viewport) .ele-nav-link:hover,
+.ele-app-container:has(.ele-landing-viewport) .ele-nav-link.active {
+  color: #fff;
+}
+
+.ele-app-container:has(.ele-landing-viewport) .ele-nav-link.active::after {
+  background: #d84a45;
+}
+
+@media (max-width: 600px) {
+  .ele-app-container:has(.ele-landing-viewport) .ele-navbar {
+    align-items: flex-start;
+    gap: 13px;
+    padding: 17px 22px 13px;
+  }
+
+  .ele-app-container:has(.ele-landing-viewport) .ele-brand-link {
+    font-size: 0.7rem;
+  }
+
+  .ele-app-container:has(.ele-landing-viewport) .ele-nav-menu {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 19px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .ele-app-container:has(.ele-landing-viewport) .ele-nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ele-app-container:has(.ele-landing-viewport) .ele-nav-link {
+    flex: 0 0 auto;
+    font-size: 0.64rem;
+  }
+}
