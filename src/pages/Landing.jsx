@@ -4,6 +4,49 @@ import { FaTerminal, FaCamera, FaGlobe, FaGithub, FaChevronRight } from 'react-i
 import '../styles/Landing.css';
 import profileImg from '../assets/profile.png';
 
+const selectedFullStackWork = [
+  {
+    name: 'Chivucha Investment Ltd',
+    desc: 'Inventory, order fulfillment, audit reporting and QR/barcode scanning.',
+    tech: 'React · Node.js · MongoDB · JWT',
+    link: 'https://chivucha-invest-ltd.vercel.app/'
+  },
+  {
+    name: 'Imena Move Kids',
+    desc: 'Dance management with member records, attendance and live announcements.',
+    tech: 'React · Express.js · MongoDB · Node.js',
+    link: 'https://imena-moves-kidz.vercel.app/'
+  },
+  {
+    name: 'ABT Hub',
+    desc: 'Transparent tracking for foundation finances, contributions and projects.',
+    tech: 'React · Node.js · Express.js · MongoDB',
+    link: 'https://abt-hub-org.vercel.app/'
+  },
+  {
+    name: 'Nexus News Network',
+    desc: 'Digital news publishing with an editorial dashboard and media management.',
+    tech: 'React · Express.js · MongoDB · Cloudinary',
+    link: 'https://nexus-news-network.vercel.app/'
+  },
+  {
+    name: 'Buy & Get',
+    desc: 'Full-stack online shopping with payments, search and product comparisons.',
+    tech: 'Next.js · React · Stripe API · Tailwind CSS',
+    link: 'https://buy-get-e-commerce.vercel.app/'
+  },
+  {
+    name: 'NovaPay System',
+    desc: 'Digital banking with savings goals, transfers and secure account access.',
+    tech: 'React · Node.js · Express · MongoDB · JWT'
+  },
+  {
+    name: 'LifeOS',
+    desc: 'Personal productivity and accountability platform for routines and progress.',
+    tech: 'MERN Stack'
+  }
+];
+
 export default function Landing() {
   const navigate = useNavigate();
 
@@ -107,23 +150,22 @@ export default function Landing() {
               <p className="ele-sidebar-sub-context">A few things I’ve built, designed, and explored along the way.</p>
             </div>
             <div className="ele-main-body-content">
-              <div className="ele-linear-work-stack">
-                <div className="ele-work-strip-item">
-                  <h3>LifeOS</h3>
-                  <p>A personal productivity and accountability platform.</p>
-                </div>
-                <div className="ele-work-strip-item">
-                  <h3>Nexus News Network</h3>
-                  <p>A digital news platform built for a modern Rwandan audience.</p>
-                </div>
-                <div className="ele-work-strip-item">
-                  <h3>Kigali Bites</h3>
-                  <p>A food discovery, ordering and delivery platform concept.</p>
-                </div>
-                <div className="ele-work-strip-item">
-                  <h3>Buy & Get</h3>
-                  <p>A full-stack e-commerce experience.</p>
-                </div>
+              <div className="ele-featured-work-grid">
+                {selectedFullStackWork.map((project, index) => (
+                  <article className={`ele-featured-work-item${index === 0 ? ' is-featured' : ''}`} key={project.name}>
+                    <div className="ele-featured-work-heading">
+                      <span className="ele-featured-work-type">FULL-STACK</span>
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noreferrer" aria-label={`Open ${project.name}`}>
+                          ↗
+                        </a>
+                      )}
+                    </div>
+                    <h3>{project.name}</h3>
+                    <p>{project.desc}</p>
+                    <span className="ele-featured-work-tools">{project.tech}</span>
+                  </article>
+                ))}
               </div>
               <button onClick={() => navigate('/projects')} className="ele-editorial-arrow-action-btn ele-spacing-top-boost">
                 View all work <span className="ele-arrow-glyph">→</span>
